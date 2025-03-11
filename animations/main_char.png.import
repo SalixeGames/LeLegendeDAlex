@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcbnvxudpf28n"
-path="res://.godot/imported/slahs_test.png-caf44f6525692b8d7f1705ddc602ba0e.ctex"
+uid="uid://ddav8aomh1ef8"
+path="res://.godot/imported/main_char.png-86b544992f1493fb620ae4dd7ec8b19e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animations/slahs_test.png"
-dest_files=["res://.godot/imported/slahs_test.png-caf44f6525692b8d7f1705ddc602ba0e.ctex"]
+source_file="res://animations/main_char.png"
+dest_files=["res://.godot/imported/main_char.png-86b544992f1493fb620ae4dd7ec8b19e.ctex"]
 
 [params]
 
