@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c21np1kf5tqa"]
+[gd_scene load_steps=25 format=3 uid="uid://c21np1kf5tqa"]
 
 [ext_resource type="Script" uid="uid://b4ic6t8wh6wv3" path="res://scripts/main_character.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://ddav8aomh1ef8" path="res://animations/main_char.png" id="2_qlg0r"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://dn6b3i7grc5i2" path="res://scripts/state_idle.gd" id="4_qlg0r"]
 [ext_resource type="Script" uid="uid://dgwhi1djunvbp" path="res://scripts/state_walk.gd" id="5_qlg0r"]
 [ext_resource type="Script" uid="uid://7kb5k05a1i4a" path="res://scripts/state_attack.gd" id="6_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://bmjprhnv31uow" path="res://sounds/sword_slash.wav" id="7_smehm"]
+[ext_resource type="AudioStream" uid="uid://ch1jrodwfwexi" path="res://sounds/grunt_1.wav" id="8_ur7pv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_63peu"]
 radius = 16.0
@@ -459,4 +461,11 @@ metadata/_custom_type_script = "uid://dgwhi1djunvbp"
 
 [node name="StateAttack" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("6_tuyoq")
+attack_sound = ExtResource("7_smehm")
+grunt_sound = ExtResource("8_ur7pv")
 metadata/_custom_type_script = "uid://7kb5k05a1i4a"
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio"]
+max_polyphony = 4

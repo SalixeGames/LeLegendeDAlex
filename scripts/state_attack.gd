@@ -1,10 +1,15 @@
 class_name StateAttack extends State
 
 
+@export_category("Sounds")
+@export var attack_sound : AudioStreamWAV
+@export var grunt_sound : AudioStreamWAV
+
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var idle: State = $"../StateIdle"
 @onready var walk: StateWalk = $"../StateWalk"
 @onready var hit_box: CollisionShape2D = $"../../AttackCollision"
+@onready var audio_player: AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
 
 var attacking : bool
 
@@ -14,6 +19,9 @@ func enter() -> void:
 	animation_player.animation_finished.connect(end_attack)
 	attacking = true
 	hit_box.disabled = false
+	
+	audio_player.stream = grunt_sound if not randi() % 5 else attack_sound
+	audio_player.play()
 	
 func exit() -> void:
 	animation_player.animation_finished.disconnect(end_attack)

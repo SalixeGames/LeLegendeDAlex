@@ -59,6 +59,15 @@ attack={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_1="player"
+2d_render/layer_2="item"
+2d_render/layer_3="mob"
+2d_render/layer_4="wall"
+2d_render/layer_5="void"
+2d_render/layer_6="environnement"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
