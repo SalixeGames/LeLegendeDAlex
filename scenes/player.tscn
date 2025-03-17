@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://c21np1kf5tqa"]
+[gd_scene load_steps=26 format=3 uid="uid://c21np1kf5tqa"]
 
 [ext_resource type="Script" uid="uid://b4ic6t8wh6wv3" path="res://scripts/main_character.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://ddav8aomh1ef8" path="res://animations/main_char.png" id="2_qlg0r"]
 [ext_resource type="Script" uid="uid://cb3b3xdgowd4c" path="res://scripts/player_state_machine.gd" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://cbef72lwf0clx" path="res://scripts/hurt_box.gd" id="3_ur7pv"]
 [ext_resource type="Script" uid="uid://dn6b3i7grc5i2" path="res://scripts/state_idle.gd" id="4_qlg0r"]
 [ext_resource type="Script" uid="uid://dgwhi1djunvbp" path="res://scripts/state_walk.gd" id="5_qlg0r"]
 [ext_resource type="Script" uid="uid://7kb5k05a1i4a" path="res://scripts/state_attack.gd" id="6_tuyoq"]
@@ -437,9 +438,10 @@ vframes = 4
 frame = 30
 
 [node name="sword" type="Area2D" parent="Sprite2D"]
-collision_layer = 2
+collision_layer = 4
 collision_mask = 0
 monitoring = false
+script = ExtResource("3_ur7pv")
 
 [node name="AttackCollision" type="CollisionShape2D" parent="Sprite2D/sword"]
 top_level = true
