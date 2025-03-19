@@ -84,6 +84,7 @@ La défense est la capacité à se protéger. Chaque coup bloqué avec le boucli
 |   NIV    |                                   5                                   |                            10                            |                                   15                                   |
 | :------: | :-------------------------------------------------------------------: | :------------------------------------------------------: | :--------------------------------------------------------------------: |
 | Bouclier | Réduit de 1 les points de vie de l'attaque avant les autres calculs\* | Bouclier actif lors de l'utilisation de trousse de soins | Réduit de 5 les points de vie de l'attaque avant les autres calculs­­' |
+
 \*Ainsi, au niveau 5, après avoir acheté l'amélioration, un coup de 6 au bouclier ne fera pas de dégâts, un coup de 11 fera 5 dégâts, mais un coup de 12 fera 12 dégâts.
 'Ainsi, au niveau 15, après avoir acheté l'amélioration, un coup de 20 au bouclier ne fera pas de dégâts, un coup de 35 fera 15 dégâts, mais un coup de 36 fera 36 dégâts.
 
