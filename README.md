@@ -72,7 +72,7 @@ La médecine est la capacité à se soigner. Chaque utilisation d'une trousse de
 | Trousse de soins | Soins 2x plus rapides | Soins instantanés | Soins jusqu'à 110% de la vie maximal |
 
 ##### ATQ
-L'attaque est la capacité à attaquer. Chaque ennemi tué donne de ;'expérience dans le domaine. Chaque niveau augmente la force d'attaque de 1 point de vie.
+L'attaque est la capacité à attaquer. Chaque ennemi tué donne de l'expérience dans le domaine. Chaque niveau augmente la force d'attaque de 1 point de vie.
 
 | NIV  |               5                |             10             |                                        15                                         |
 | :--: | :----------------------------: | :------------------------: | :-------------------------------------------------------------------------------: |
@@ -98,6 +98,24 @@ La dextérité est la capacité à utiliser un outil. Chaque utilisation utile\*
 |   Boomerang   |                  Inflige (ATQ/5) points de vie au contacte d'un ennemie                   |                       Ne s'arrête pas au contacte d'ennemies sans bouclier                        |                 Peut briser les murs fragiles                  |
 | Bottes ailées |                              Permet de s'immobiliser en vol                               |                                 Permet d'utiliser un outil en vol                                 |      S'immobiliser en vol met le minuteur de vol en pause      |
 
+#### Les PNJ
+Les 4 différents villages réaccueillent différents personnages non joueurs (PNJ). Ces PNJ orientent le joueur dans sa quête avec des dialogues organiques. Certains PNJ offrent également des quêtes secondaires, par exemple la quête pour obtenir gratuitement le bouclier. 4 commerçants sont aussi disponible dans chaque village:
+- [Médecin]: Vend des trousses de soins et peut soigner le joueur.
+- [Bricoleur]: Vend les améliorations d'outils et des bombes (seulement après que le joueur a obtenus le sac de bombes).
+- [Voyant.e]: Vend des indices.
+- [Fabricant de sacs]: Vends des améliorations pour la bourse et le sac de bombes.
+
+#### Les ennemies
+Il y a 3 sortes d'ennemies, les petits, les moyens et les gros. Les petits sont les ennemis commun qui ne sont la que pour rendre la route moins linéaire et pour se pratiquer à utiliser les différentes habiletés. Les moyens sont les semi boss qui protègent les outils dans les donjons. Les gros sont les boss qu'on doit vaincre à la fin de chaque donjon pour obtenir une clef du donjon final ou pour exterminer le mal ultime de ce dernier.
+
+##### Les ennemis communs
+Faciles à vaincre, il ont des pattern de déplacement simples. Ils peuvent réagir à la présence et aux attaques du joueur. Ils ont un nombre de points de vies suffisant pour qu'un joueur suivant une progression normale puisse les vaincre en 1 à 3 coups. Leurs attaques sont prévisibles. Ils ne font pas suffisamment de dégâts pour qu'un joueur à la progression normale subisse l'intégralités des points de vie déduit par leur arme.
+
+##### Les semis boss
+Ils ont des patterns de déplacement plus diversifiés. Leur attaques sont également variées, mais restent prévisibles. Nécessitent plusieurs attaques d'un joueur à la progression normale pour être vaincus.
+
+##### Les boss
+Comme les semis boss, mais ont 3 phases avec chacune un ensemble de pattern de déplacement et d'attaques différentes. Chaque phase nécessite l'utilisation de l'outil obtenu dans le donjon du boss pour faire des dégât à celui-ci.
 
 ## Mécaniques optionnelles
 ### Monter sur les toits
@@ -105,3 +123,6 @@ Pouvoir monter sur les toits des villes, agissant comme un nouveau niveau où le
 
 ### Un casino
 Un casino permettrais de rentre les sous supplémentaires non superflus.
+
+### Relations
+Le joueur pourrait améliorer ses relations avec les PNJ, influant sur les prix dans leurs boutiques. Avec une assez bonne relation, il pourrait marier un des PNJ et ainsi avoir accès gratuitement à ses services.
