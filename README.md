@@ -127,3 +127,18 @@ Un casino permettrais de rentre les sous supplémentaires non superflus.
 ### Relations
 Le joueur pourrait améliorer ses relations avec les PNJ, influant sur les prix dans leurs boutiques. Avec une assez bonne relation, il pourrait marier un des PNJ et ainsi avoir accès gratuitement à ses services.
 
+## Crédits
+### Propriétaire du projet
+- Alexis St-Amand
+### Programmation
+- Alexis St-Amand
+### Design
+- Alexis St-Amand
+### Art
+- Alexis St-Amand
+### Musique
+- Alexis St-Amand
+
+## ---
+
+Pour participer au projet, contactez-moi au salixegames@gmail.com 
