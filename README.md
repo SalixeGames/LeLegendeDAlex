@@ -127,6 +127,9 @@ Un casino permettrais de rentre les sous supplémentaires non superflus.
 ### Relations
 Le joueur pourrait améliorer ses relations avec les PNJ, influant sur les prix dans leurs boutiques. Avec une assez bonne relation, il pourrait marier un des PNJ et ainsi avoir accès gratuitement à ses services.
 
+## Ressources
+[Kanban](https://trello.com/b/g82gi876/le-legende-dalex)
+[GitHub](https://github.com/SalixeGames/LeLegendeDAlex)
 ## Crédits
 ### Propriétaire du projet
 - Alexis St-Amand
