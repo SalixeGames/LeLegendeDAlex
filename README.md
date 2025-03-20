@@ -7,28 +7,28 @@ Un jeu de rôle d'aventure en vue du dessus de style La Légende de Zelda
 
 Le Légende D'Alex est un jeu de rôle d'aventure s'inspirant des jeux 2D de la série La Légende de Zelda où le héro doit s'attaquer a plusieurs donjons afin de récupérer différents outils qui lui permettront de progresser dans le donjon ultime et finalement vaincre le vilain ultime.
 
-Armé d'une épée et d'un bouclier, le héro se fait donner la tâche de libérer son village du mal qui a pris possession du donjons où sont enterrés les défunts du village. Cependant, ce maléfice s'est enfermé derrières trois loquets (barrures physique? magique?) dont les clefs sont gardés par les bras droits, gauches et centre du mal suprêmes et se cachent dans les donjons de trois villages environnants. En plus d'abriter les loyaux serviteurs du roi des ténèbres, chaque donjon cache en son sein un outil permettant à notre aventurier de progresser au delà d'obstacles autrement infranchissables.
+Armé d'une épée et d'un bouclier, le héro se fait donner la tâche de libérer son village du mal qui a pris possession du donjon où sont enterrés les défunts du village. Cependant, ce maléfice s'est enfermé derrière trois loquets (barrures physiques? magiques?) dont les clefs sont gardés par les bras droits, gauches et centre du mal suprêmes et se cachent dans les donjons de trois villages environnants. En plus d'abriter les loyaux serviteurs du roi des ténèbres, chaque donjon cache en son sein un outil permettant à notre aventurier de progresser au delà d'obstacles autrement infranchissables.
 
 ### Les systèmes
-Le jeu utilisera 4 systèmes: les outils, les niveaux de maîtrise, les PNJ et les ennemies.
+Le jeu utilisera 4 systèmes: les outils, les niveaux de maîtrise, les PNJ et les ennemis.
 #### Les outils
 7 outils sont fournis au joueur afin de progresser dans le jeu:
 - L'épée
 - Le bouclier
 - Les trousses de soins
-- Le grapin
+- Le grappin
 - Les bombes
 - Le boomerang
 - Les bottes ailées
 
-L'Épée et le bouclier sont obtenus au début du jeu et sont nécessaire pour se battre contre les différents ennemies.
-Les trousses de soins servent à récupérer de la vie et sont retrouvées en tuant des ennemies et en brisant des objets de décoration.
-Le grapin, le boomerang et les bombes se trouvent dans les 3 premiers donjons et sont nécessaire pour progresser dans le donjon final.
+L'Épée et le bouclier sont obtenus au début du jeu et sont nécessaire pour se battre contre les différents ennemis.
+Les trousses de soins servent à récupérer de la vie et sont retrouvées en tuant des ennemis et en brisant des objets de décoration.
+Le grappin, le boomerang et les bombes se trouvent dans les 3 premiers donjons et sont nécessaire pour progresser dans le donjon final.
 Les bottes ailées sont cachées au sein du dernier donjon et sont utile pour y progresser plus facilement.
 
 ##### Utilisation
 ###### Épée
-L'épée est une épée et est utilisée pour se battre. On peut frapper avec et ça fait du dégâts aux ennemies et à certains éléments du décors. De base elle frappe de 1 point de vie. On commence la partie avec elle.
+L'épée est une épée et est utilisée pour se battre. On peut frapper avec et ça fait du dégâts aux ennemis et à certains éléments du décors. De base elle frappe de 1 point de vie. On commence la partie avec elle.
 
 ###### Bouclier
 Le bouclier sert à se protéger des coups. En restant immobile, le bouclier intercepte les coups suffisamment faibles qui arrivent de directement en face du joueur. De base, il bloque les coups de 1 point de dégât. Les coups dépassant les dégâts bloqués se comportent ainsi:
@@ -43,14 +43,14 @@ On l'obtiens soit en l'achetant, soit en réalisant une quête secondaire avant 
 ###### Trousses de soins
 Les trousses de soins redonnent un peu de vie au joueur Elles redonnent de base 1 point de vie. De base, elles demandes 4 secondes d'immobilité pour prendre effet. Elle peuvent être obtenues en tuant des ennemis et en les achetant aux magasins.
 
-###### Grapin
-Permet de tirer le joueur vers des structures en bois se trouvant directement devant lui, lui permettant de franchir le vide ou de longues distances un peu plus rapidement. Les structures de bois peuvent inclure des boucliers ennemis. On l'obtient dans un des premiers donjons.
+###### Grappin
+Permet de tirer le joueur vers des structures en bois se trouvant directement devant lui, lui permettant de franchir le vide ou de longues distances un peu plus rapidement. Les structures de bois peuvent inclure des boucliers ennemis. On l'obtient dans un des premiers donjon.
 
 ###### Bombes
-Permettent de briser des murs fragiles afin d'ouvrir de nouveaux passages. On ne peut en porter qu'un nombre limité (à déterminer). On peut en trouver dans la nature (comme les bombes fleur de zelda). Après avoir obtenus le sac à bombes dans son donjon, les ennemies peuvent en donner à leur mort et on peut en transporter jusqu'à 10.
+Permettent de briser des murs fragiles afin d'ouvrir de nouveaux passages. On ne peut en porter qu'un nombre limité (à déterminer). On peut en trouver dans la nature (comme les bombes fleur de zelda). Après avoir obtenus le sac à bombes dans son donjon, les ennemis peuvent en donner à leur mort et on peut en transporter jusqu'à 10.
 
 ###### Boomerang
-Reviens systématiquement vers le lanceur après avoir atteint la fin de sa trajectoire ou un obstacle comme un ennemi ou un mur. Se lance en ligne droite dans la direction du regard du lanceur. Ramassera le premier item récoltable par le joueur sur son chemin et le lui rapportera. Immobilise les ennemis qu'il percute. On l'obtient dans un des premiers donjons.
+Reviens systématiquement vers le lanceur après avoir atteint la fin de sa trajectoire ou un obstacle comme un ennemi ou un mur. Se lance en ligne droite dans la direction du regard du lanceur. Ramassera le premier item récoltable par le joueur sur son chemin et le lui rapportera. Immobilise les ennemis qu'il percute. On l'obtient dans un des premiers donjon.
 
 ###### Bottes ailées
 Permettent de marcher pour un court temps sur le vide et sur l'eau comme s'il s'agissait de plancher. De base, le vol s'interrompt si le joueur s'immobilise ou essaie d'utiliser un outil.
@@ -60,7 +60,7 @@ En utilisant ses différents outils, le joueur devient meilleur pour les maîtri
 - La médecine (MED): Kits de soins
 - L'attaque (ATQ): Épée
 - La défense (DEF): Bouclier
-- La dextérité (DEX): Grapin, Bombes, Boomerang, Bottes ailées
+- La dextérité (DEX): Grappin, Bombes, Boomerang, Bottes ailées
 
 Aux niveaux 5, 10 et 15, certains NPC vendront des améliorations pour les outils de la compétences lui attribuant de meilleurs effets.
 
@@ -91,12 +91,12 @@ La défense est la capacité à se protéger. Chaque coup bloqué avec le boucli
 ##### DEX
 La dextérité est la capacité à utiliser un outil. Chaque utilisation utile\* d'un des 4 outils de temple donne de l'expérience. Chaque niveau augmente la porté des outils (traduit par une plus longue durée pour les bottes).
 
-|      NIV      |                                             5                                             |                                                10                                                 |                               15                               |
-| :-----------: | :---------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------: | :------------------------------------------------------------: |
-|    Grapin     | Permet de rester collé sur la cible (mais seule action possible est de se laisser tomber) | Ajoute un deuxième grapin (rajoute l'option de jeter un nouveau grapin lorsque collé à une cible) |   Le grapin peut faire mal aux ennemis (ATQ/5) points de vie   |
-|    Bombes     |                      Permet de repérer facilement les murs fragiles                       |                                Double la capacité du sac à bombes                                 | Permet de bloquer (3xDEF)% dégâts d'explosion avec le bouclier |
-|   Boomerang   |                  Inflige (ATQ/5) points de vie au contacte d'un ennemie                   |                       Ne s'arrête pas au contacte d'ennemies sans bouclier                        |                 Peut briser les murs fragiles                  |
-| Bottes ailées |                              Permet de s'immobiliser en vol                               |                                 Permet d'utiliser un outil en vol                                 |      S'immobiliser en vol met le minuteur de vol en pause      |
+|      NIV      |                                             5                                             |                                                 10                                                  |                               15                               |
+| :-----------: | :---------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------: | :------------------------------------------------------------: |
+|    Grappin    | Permet de rester collé sur la cible (mais seule action possible est de se laisser tomber) | Ajoute un deuxième grappin (rajoute l'option de jeter un nouveau grappin lorsque collé à une cible) |  Le grappin peut faire mal aux ennemis (ATQ/5) points de vie   |
+|    Bombes     |                      Permet de repérer facilement les murs fragiles                       |                                 Double la capacité du sac à bombes                                  | Permet de bloquer (3xDEF)% dégâts d'explosion avec le bouclier |
+|   Boomerang   |                   Inflige (ATQ/5) points de vie au contacte d'un ennemi                   |                         Ne s'arrête pas au contacte d'ennemis sans bouclier                         |                 Peut briser les murs fragiles                  |
+| Bottes ailées |                              Permet de s'immobiliser en vol                               |                                  Permet d'utiliser un outil en vol                                  |      S'immobiliser en vol met le minuteur de vol en pause      |
 
 #### Les PNJ
 Les 4 différents villages réaccueillent différents personnages non joueurs (PNJ). Ces PNJ orientent le joueur dans sa quête avec des dialogues organiques. Certains PNJ offrent également des quêtes secondaires, par exemple la quête pour obtenir gratuitement le bouclier. 4 commerçants sont aussi disponible dans chaque village:
@@ -105,8 +105,8 @@ Les 4 différents villages réaccueillent différents personnages non joueurs (P
 - [Voyant.e]: Vend des indices.
 - [Fabricant de sacs]: Vends des améliorations pour la bourse et le sac de bombes.
 
-#### Les ennemies
-Il y a 3 sortes d'ennemies, les petits, les moyens et les gros. Les petits sont les ennemis commun qui ne sont la que pour rendre la route moins linéaire et pour se pratiquer à utiliser les différentes habiletés. Les moyens sont les semi boss qui protègent les outils dans les donjons. Les gros sont les boss qu'on doit vaincre à la fin de chaque donjon pour obtenir une clef du donjon final ou pour exterminer le mal ultime de ce dernier.
+#### Les ennemis
+Il y a 3 sortes d'ennemis, les petits, les moyens et les gros. Les petits sont les ennemis commun qui ne sont la que pour rendre la route moins linéaire et pour se pratiquer à utiliser les différentes habiletés. Les moyens sont les semi boss qui protègent les outils dans les donjons. Les gros sont les boss qu'on doit vaincre à la fin de chaque donjon pour obtenir une clef du donjon final ou pour exterminer le mal ultime de ce dernier.
 
 ##### Les ennemis communs
 Faciles à vaincre, il ont des pattern de déplacement simples. Ils peuvent réagir à la présence et aux attaques du joueur. Ils ont un nombre de points de vies suffisant pour qu'un joueur suivant une progression normale puisse les vaincre en 1 à 3 coups. Leurs attaques sont prévisibles. Ils ne font pas suffisamment de dégâts pour qu'un joueur à la progression normale subisse l'intégralités des points de vie déduit par leur arme.
@@ -126,3 +126,4 @@ Un casino permettrais de rentre les sous supplémentaires non superflus.
 
 ### Relations
 Le joueur pourrait améliorer ses relations avec les PNJ, influant sur les prix dans leurs boutiques. Avec une assez bonne relation, il pourrait marier un des PNJ et ainsi avoir accès gratuitement à ses services.
+
