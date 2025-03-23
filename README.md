@@ -99,7 +99,7 @@ La dextérité est la capacité à utiliser un outil. Chaque utilisation utile\*
 | Bottes ailées |                              Permet de s'immobiliser en vol                               |                                  Permet d'utiliser un outil en vol                                  |      S'immobiliser en vol met le minuteur de vol en pause      |
 
 #### Les PNJ
-Les 4 différents villages réaccueillent différents personnages non joueurs (PNJ). Ces PNJ orientent le joueur dans sa quête avec des dialogues organiques. Certains PNJ offrent également des quêtes secondaires, par exemple la quête pour obtenir gratuitement le bouclier. 4 commerçants sont aussi disponible dans chaque village:
+Les 4 différents villages reccueillent différents personnages non joueurs (PNJ). Ces PNJ orientent le joueur dans sa quête avec des dialogues organiques. Certains PNJ offrent également des quêtes secondaires, par exemple la quête pour obtenir gratuitement le bouclier. 4 commerçants sont aussi disponible dans chaque village:
 - [Médecin]: Vend des trousses de soins et peut soigner le joueur.
 - [Bricoleur]: Vend les améliorations d'outils et des bombes (seulement après que le joueur a obtenus le sac de bombes).
 - [Voyant.e]: Vend des indices.
@@ -124,9 +124,19 @@ Pouvoir monter sur les toits des villes, agissant comme un nouveau niveau où le
 ### Un casino
 Un casino permettrais de rentre les sous supplémentaires non superflus.
 
+### Rendre le jeu multilingue
+mettre au moins ces langues:
+- Français internationnal
+- Anglais
+- Espagnol??
+- Autre?
+
 ### Relations
 Le joueur pourrait améliorer ses relations avec les PNJ, influant sur les prix dans leurs boutiques. Avec une assez bonne relation, il pourrait marier un des PNJ et ainsi avoir accès gratuitement à ses services.
 
+## Ressources
+[Kanban](https://trello.com/b/g82gi876/le-legende-dalex)
+[GitHub](https://github.com/SalixeGames/LeLegendeDAlex)
 ## Crédits
 ### Propriétaire du projet
 - Alexis St-Amand
