@@ -50,7 +50,7 @@ Voir [le trello](https://trello.com/b/g82gi876/le-legende-dalex) pour une liste 
 	- [ ] Attack
 	- [ ] Interaction avec le joueur
 - [ ] Designer des ennemies communs pour les 4 donjons et l'overworld
-- [ ] Faire 4 semi boos
+- [ ] Faire 4 semi boss
 	- [ ] Ajout d'options d'attaques et de mouvement dans l'arsenal d'un ennemi commun
 - [ ] Faire 4 bosses
 	- [ ] créer le système de phases
