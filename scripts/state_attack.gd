@@ -8,7 +8,7 @@ class_name StateAttack extends State
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var idle: State = $"../StateIdle"
 @onready var walk: StateWalk = $"../StateWalk"
-@onready var hit_box: CollisionShape2D = $"../../AttackCollision"
+@onready var hit_box: CollisionShape2D = $"../../Sprite2D/sword/AttackCollision"
 @onready var audio_player: AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
 
 var attacking : bool

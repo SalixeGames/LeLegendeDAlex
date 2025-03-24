@@ -6,7 +6,6 @@ var cardinal_direction : Vector2 = Vector2.DOWN
 var cardinal_direction_name : String = "right"
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var player_state_machine: PlayerStateMachine = $PlayerStateMachine
 
 
