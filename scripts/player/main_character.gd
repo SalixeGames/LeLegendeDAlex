@@ -4,6 +4,7 @@ class_name Player extends CharacterBody2D
 var direction : Vector2 = Vector2.ZERO
 var cardinal_direction : Vector2 = Vector2.DOWN
 var cardinal_direction_name : String = "right"
+var sword
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var player_state_machine: PlayerStateMachine = $PlayerStateMachine
@@ -11,6 +12,8 @@ var cardinal_direction_name : String = "right"
 
 func _ready() -> void:
 	player_state_machine.initialize(self)
+	sword = GameState.get_sword_state()
+	
 
 func _process(delta: float) -> void:
 	direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")

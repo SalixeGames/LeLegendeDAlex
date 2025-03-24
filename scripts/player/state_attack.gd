@@ -23,13 +23,15 @@ func enter() -> void:
 	audio_player.stream = grunt_sound if not randi() % 5 else attack_sound
 	audio_player.play()
 	
+	print(player.sword)
+	
 func exit() -> void:
 	animation_player.animation_finished.disconnect(end_attack)
 	attacking = false
 	hit_box.disabled = true
 	
 func process(_delta : float) -> State:
-	player.velocity = player.direction * walk.move_speed * 2
+	player.velocity = player.direction * walk.move_speed * get_dash_speed()
 	
 	if player.set_direction():
 		player.update_anim("walk")
@@ -41,6 +43,11 @@ func process(_delta : float) -> State:
 		return idle
 		
 	return self
+
+func get_dash_speed() -> int:
+	if player.sword >= GameState.SwordState.medium:
+		return 4
+	return 1
 	
 func physics(_delta : float) -> State:
 	return null
