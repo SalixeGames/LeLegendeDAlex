@@ -23,7 +23,8 @@ func enter() -> void:
 	audio_player.stream = grunt_sound if not randi() % 5 else attack_sound
 	audio_player.play()
 	
-	print(player.sword)
+	if player.sword >= GameState.SwordState.expert:
+		player.hovering = true
 
 func get_attack_type() -> String:
 	if player.sword >= GameState.SwordState.strong:
@@ -34,6 +35,9 @@ func exit() -> void:
 	animation_player.animation_finished.disconnect(end_attack)
 	attacking = false
 	hit_box.disabled = true
+	
+	if player.sword >= GameState.SwordState.expert:
+		player.hovering = false
 	
 func process(_delta : float) -> State:
 	player.velocity = player.direction * walk.move_speed * get_dash_speed()
