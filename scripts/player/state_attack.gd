@@ -15,7 +15,7 @@ var attacking : bool
 
 
 func enter() -> void:
-	player.update_anim("attack")
+	player.update_anim(get_attack_type())
 	animation_player.animation_finished.connect(end_attack)
 	attacking = true
 	hit_box.disabled = false
@@ -24,6 +24,11 @@ func enter() -> void:
 	audio_player.play()
 	
 	print(player.sword)
+
+func get_attack_type() -> String:
+	if player.sword >= GameState.SwordState.strong:
+		return "spin"
+	return "attack"
 	
 func exit() -> void:
 	animation_player.animation_finished.disconnect(end_attack)
