@@ -35,7 +35,8 @@
               "title": "README"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -183,10 +184,21 @@
       "command-palette:Ouvrir la palette de commandes": false
     }
   },
-  "active": "a8bd2faae178ed48",
+  "active": "3933c629e1a8b93e",
   "lastOpenFiles": [
-    "README.md",
+    "scenes/player/player.tscn6745781274.tmp",
+    "scripts/player/state_attack.gd6744880012.tmp",
+    "scenes/player/player.tscn6744850137.tmp",
+    "scenes/player/player.tscn6733347018.tmp",
+    "scripts/player/state_attack.gd6731424938.tmp",
+    "scenes/player/player.tscn6731396423.tmp",
+    "scripts/game_state.gd6713759134.tmp",
+    "scenes/player/player.tscn6713728934.tmp",
+    "scenes/player/player.tscn6687345310.tmp",
+    "scripts/player/state_attack.gd6685664701.tmp",
+    "scenes/player/player.tscn6685635743.tmp",
     "À faire.md",
+    "README.md",
     "icon.svg"
   ]
 }
