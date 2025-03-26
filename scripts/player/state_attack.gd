@@ -24,7 +24,7 @@ func enter() -> void:
 	audio_player.play()
 	
 	if player.sword >= GameState.SwordState.expert:
-		player.hovering = true
+		player.set_hovering_state(true)
 
 func get_attack_type() -> String:
 	if player.sword >= GameState.SwordState.strong:
@@ -37,7 +37,7 @@ func exit() -> void:
 	hit_box.disabled = true
 	
 	if player.sword >= GameState.SwordState.expert:
-		player.hovering = false
+		player.set_hovering_state(false)
 	
 func process(_delta : float) -> State:
 	player.velocity = player.direction * walk.move_speed * get_dash_speed()

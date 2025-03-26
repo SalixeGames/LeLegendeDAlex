@@ -6,6 +6,11 @@ var cardinal_direction : Vector2 = Vector2.DOWN
 var cardinal_direction_name : String = "right"
 var sword = -1
 var hovering : bool = false
+var void_counter : int = 0
+var in_void : bool = false
+
+@export_category("Positioning")
+@export var respawn_position : Vector2 = Vector2(0, 0)
 
 @export_category("Sword")
 @export var sword_colors: Array[Color] = [Color.RED, Color.GREEN, Color.BLUE, Color.GOLD]
@@ -35,6 +40,8 @@ func _process(delta: float) -> void:
 		
 
 func  _physics_process(delta: float) -> void:
+	if not hovering and void_counter > 6:
+		respawn()
 	move_and_slide()
 	
 func set_direction() -> bool:
@@ -73,4 +80,26 @@ func update_sword() -> void:
 	if sword != GameState.sword_state:
 		sword = GameState.sword_state
 		sword_sprite.modulate = sword_colors[sword]
-		
+
+func set_hovering_state(is_hovering : bool) -> void:
+	if hovering == is_hovering:
+		return
+	
+	if is_hovering:
+		hovering = true
+		set_collision_mask_value(5, false)
+	else:
+		hovering = false
+		set_collision_mask_value(5, true)
+
+func entering_void(body : Node2D) -> void:
+	void_counter += int(body.get_collision_layer_value(5))
+	print(void_counter)
+
+func exiting_void(body : Node2D) -> void:
+	void_counter -= int(body.get_collision_layer_value(5))
+	print(void_counter)
+
+func respawn() -> void:
+	print("respawning!")
+	position = respawn_position

@@ -150,6 +150,7 @@ Le joueur pourrait améliorer ses relations avec les PNJ, influant sur les prix 
 - David Lavigne
 ### Musique
 - Alexis St-Amand
+- Brandon Lavoie
 
 ## ---
 
