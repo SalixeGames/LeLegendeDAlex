@@ -144,8 +144,10 @@ Le joueur pourrait améliorer ses relations avec les PNJ, influant sur les prix 
 - Alexis St-Amand
 ### Design
 - Alexis St-Amand
+- David Lavigne
 ### Art
 - Alexis St-Amand
+- David Lavigne
 ### Musique
 - Alexis St-Amand
 
