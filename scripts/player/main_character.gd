@@ -6,6 +6,10 @@ var cardinal_direction : Vector2 = Vector2.DOWN
 var cardinal_direction_name : String = "right"
 var sword = -1
 var hovering : bool = false
+var in_void : bool = false
+
+@export_category("Positioning")
+@export var respawn_position : Vector2 = Vector2(0, 0)
 
 @export_category("Sword")
 @export var sword_colors: Array[Color] = [Color.RED, Color.GREEN, Color.BLUE, Color.GOLD]
@@ -73,4 +77,26 @@ func update_sword() -> void:
 	if sword != GameState.sword_state:
 		sword = GameState.sword_state
 		sword_sprite.modulate = sword_colors[sword]
-		
+
+func set_hovering_state(is_hovering : bool) -> void:
+	if hovering == is_hovering:
+		return
+	
+	if is_hovering:
+		hovering = true
+		set_collision_mask_value(5, false)
+	else:
+		hovering = false
+		set_collision_mask_value(5, true)
+
+func entering_void(body : Node2D) -> void:
+	if not in_void and not hovering:
+		in_void = true
+		respawn()
+
+func exiting_void(body : Node2D) -> void:
+	if in_void and not hovering:
+		in_void = false
+
+func respawn() -> void:
+	position = respawn_position
