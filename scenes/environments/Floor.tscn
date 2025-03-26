@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://k1wf2jiscfi2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_72lx5"]
+size = Vector3(16, 16, 1)
+
+[node name="Floor" type="MeshInstance2D"]
+self_modulate = Color(0.282549, 0.530918, 0.268865, 1)
+light_mask = 32
+z_index = -1
+mesh = SubResource("BoxMesh_72lx5")
