@@ -6,6 +6,7 @@ var cardinal_direction : Vector2 = Vector2.DOWN
 var cardinal_direction_name : String = "right"
 var sword = -1
 var hovering : bool = false
+var void_counter : int = 0
 var in_void : bool = false
 
 @export_category("Positioning")
@@ -39,6 +40,8 @@ func _process(delta: float) -> void:
 		
 
 func  _physics_process(delta: float) -> void:
+	if not hovering and void_counter > 6:
+		respawn()
 	move_and_slide()
 	
 func set_direction() -> bool:
@@ -90,13 +93,13 @@ func set_hovering_state(is_hovering : bool) -> void:
 		set_collision_mask_value(5, true)
 
 func entering_void(body : Node2D) -> void:
-	if not in_void and not hovering:
-		in_void = true
-		respawn()
+	void_counter += int(body.get_collision_layer_value(5))
+	print(void_counter)
 
 func exiting_void(body : Node2D) -> void:
-	if in_void and not hovering:
-		in_void = false
+	void_counter -= int(body.get_collision_layer_value(5))
+	print(void_counter)
 
 func respawn() -> void:
+	print("respawning!")
 	position = respawn_position
