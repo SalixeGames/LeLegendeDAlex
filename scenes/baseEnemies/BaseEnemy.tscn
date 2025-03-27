@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dix7yn7cxx3cj"]
+[gd_scene load_steps=7 format=3 uid="uid://dix7yn7cxx3cj"]
 
-[ext_resource type="Script" uid="uid://dfdyv78ro7mng" path="res://scenes/baseEnemies/base_enemy.gd" id="1_c6idg"]
-[ext_resource type="Script" uid="uid://cqfhny4iq01p3" path="res://scripts/player/hit_box.gd" id="1_egrxe"]
+[ext_resource type="Script" uid="uid://dfdyv78ro7mng" path="res://scripts/enemies/base_enemy.gd" id="1_c6idg"]
+[ext_resource type="Script" uid="uid://cqfhny4iq01p3" path="res://scripts/hit_box.gd" id="1_egrxe"]
+[ext_resource type="Script" uid="uid://cb3b3xdgowd4c" path="res://scripts/state_machine.gd" id="3_56vv0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c6idg"]
 radius = 8.0
@@ -36,5 +37,9 @@ shape = SubResource("CircleShape2D_8of78")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 mesh = SubResource("SphereMesh_8of78")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_56vv0")
+metadata/_custom_type_script = "uid://cb3b3xdgowd4c"
 
 [connection signal="damaged" from="HitBox" to="." method="take_hit"]

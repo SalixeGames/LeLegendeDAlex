@@ -15,7 +15,7 @@ var attacking : bool
 
 
 func enter() -> void:
-	player.update_anim(get_attack_type())
+	controller.update_anim(get_attack_type())
 	animation_player.animation_finished.connect(end_attack)
 	attacking = true
 	hit_box.disabled = false
@@ -23,11 +23,11 @@ func enter() -> void:
 	audio_player.stream = grunt_sound if not randi() % 5 else attack_sound
 	audio_player.play()
 	
-	if player.sword >= GameState.SwordState.expert:
-		player.set_hovering_state(true)
+	if controller.sword >= GameState.SwordState.expert:
+		controller.set_hovering_state(true)
 
 func get_attack_type() -> String:
-	if player.sword >= GameState.SwordState.strong:
+	if controller.sword >= GameState.SwordState.strong:
 		return "spin"
 	return "attack"
 	
@@ -36,25 +36,25 @@ func exit() -> void:
 	attacking = false
 	hit_box.disabled = true
 	
-	if player.sword >= GameState.SwordState.expert:
-		player.set_hovering_state(false)
+	if controller.sword >= GameState.SwordState.expert:
+		controller.set_hovering_state(false)
 	
 func process(_delta : float) -> State:
-	player.velocity = player.direction * walk.move_speed * get_dash_speed()
+	controller.velocity = controller.direction * walk.move_speed * get_dash_speed()
 	
-	if player.set_direction():
-		player.update_anim("walk")
+	if controller.set_direction():
+		controller.update_anim("walk")
 		return walk
 	
 	if not attacking:
-		player.velocity = Vector2.ZERO
+		controller.velocity = Vector2.ZERO
 		get_tree().create_timer(10)
 		return idle
 		
 	return self
 
 func get_dash_speed() -> int:
-	if player.sword >= GameState.SwordState.medium:
+	if controller.sword >= GameState.SwordState.medium:
 		return 4
 	return 1
 	

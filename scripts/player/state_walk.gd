@@ -8,19 +8,19 @@ class_name StateWalk extends State
 
 
 func enter() -> void:
-	player.update_anim("walk")
+	controller.update_anim("walk")
 	
 func exit() -> void:
 	pass
 	
 func process(_delta : float) -> State:
-	if player.direction == Vector2.ZERO:
+	if controller.direction == Vector2.ZERO:
 		return idle
 	
-	player.velocity = player.direction * move_speed
+	controller.velocity = controller.direction * move_speed
 	
-	if player.set_direction():
-		player.update_anim("walk")
+	if controller.set_direction():
+		controller.update_anim("walk")
 	
 	return null
 	

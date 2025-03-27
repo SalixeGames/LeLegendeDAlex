@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	change_state(current_state.handle_input(event))
 
-func initialize(_player : Player) -> void:
+func initialize(_controller : CharacterBody2D) -> void:
 	states = []
 	
 	for child in get_children():
@@ -24,7 +24,7 @@ func initialize(_player : Player) -> void:
 			states.append(child)
 	
 	if states.size():
-		states[0].player = _player
+		states[0].controller = _controller
 		change_state(states[0])
 		process_mode = Node.PROCESS_MODE_INHERIT
 

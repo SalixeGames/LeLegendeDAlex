@@ -6,15 +6,15 @@ class_name StateIdle extends State
 
 
 func enter() -> void:
-	player.update_anim("idle")
+	controller.update_anim("idle")
 	
 func exit() -> void:
 	pass
 	
 func process(_delta : float) -> State:
-	if player.direction != Vector2.ZERO:
+	if controller.direction != Vector2.ZERO:
 		return walk
-	player.velocity = Vector2.ZERO
+	controller.velocity = Vector2.ZERO
 	return null
 	
 func physics(_delta : float) -> State:
