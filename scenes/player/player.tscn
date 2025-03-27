@@ -1,7 +1,7 @@
 [gd_scene load_steps=31 format=3 uid="uid://c21np1kf5tqa"]
 
 [ext_resource type="Script" uid="uid://b4ic6t8wh6wv3" path="res://scripts/player/main_character.gd" id="1_g2els"]
-[ext_resource type="Script" uid="uid://cb3b3xdgowd4c" path="res://scripts/player/player_state_machine.gd" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://cb3b3xdgowd4c" path="res://scripts/state_machine.gd" id="3_qhqgy"]
 [ext_resource type="Script" uid="uid://cbef72lwf0clx" path="res://scripts/player/hurt_box.gd" id="3_ur7pv"]
 [ext_resource type="Script" uid="uid://dn6b3i7grc5i2" path="res://scripts/player/state_idle.gd" id="4_qlg0r"]
 [ext_resource type="Script" uid="uid://dgwhi1djunvbp" path="res://scripts/player/state_walk.gd" id="5_qlg0r"]
@@ -629,7 +629,7 @@ _data = {
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-collision_mask = 56
+collision_mask = 60
 motion_mode = 1
 script = ExtResource("1_g2els")
 
@@ -652,10 +652,10 @@ scale = Vector2(2, 2)
 mesh = SubResource("CapsuleMesh_qek5x")
 
 [node name="sword" type="Area2D" parent="Sprite2D"]
-collision_layer = 4
-collision_mask = 0
-monitoring = false
+collision_mask = 4
+monitorable = false
 script = ExtResource("3_ur7pv")
+damage = 3.0
 
 [node name="AttackCollision" type="CollisionShape2D" parent="Sprite2D/sword"]
 position = Vector2(8, 0)

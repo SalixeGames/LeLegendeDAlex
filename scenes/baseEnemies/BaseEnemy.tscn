@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dix7yn7cxx3cj"]
+
+[ext_resource type="Script" uid="uid://dfdyv78ro7mng" path="res://scenes/baseEnemies/base_enemy.gd" id="1_c6idg"]
+[ext_resource type="Script" uid="uid://cqfhny4iq01p3" path="res://scripts/player/hit_box.gd" id="1_egrxe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c6idg"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8of78"]
+radius = 8.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_8of78"]
+radius = 8.0
+height = 16.0
+rings = 8
+
+[node name="BaseEnemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 61
+script = ExtResource("1_c6idg")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 4
+monitoring = false
+script = ExtResource("1_egrxe")
+metadata/_custom_type_script = "uid://cqfhny4iq01p3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CircleShape2D_c6idg")
+debug_color = Color(0.82881, 2.71939e-06, 5.77569e-07, 0.419608)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+self_modulate = Color(0.46929, 0.632264, 0.874553, 1)
+z_index = 1
+shape = SubResource("CircleShape2D_8of78")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("SphereMesh_8of78")
+
+[connection signal="damaged" from="HitBox" to="." method="take_hit"]

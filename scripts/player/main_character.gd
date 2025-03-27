@@ -17,7 +17,7 @@ var in_void : bool = false
 @onready var sword_sprite: MeshInstance2D = $Sprite2D/sword/AttackCollision/MeshInstance2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var player_state_machine: PlayerStateMachine = $PlayerStateMachine
+@onready var player_state_machine: StateMachine = $PlayerStateMachine
 
 
 func _ready() -> void:
