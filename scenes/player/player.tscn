@@ -1,7 +1,7 @@
 [gd_scene load_steps=31 format=3 uid="uid://c21np1kf5tqa"]
 
 [ext_resource type="Script" uid="uid://b4ic6t8wh6wv3" path="res://scripts/player/main_character.gd" id="1_g2els"]
-[ext_resource type="Script" uid="uid://cb3b3xdgowd4c" path="res://scripts/state_machine.gd" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://cb3b3xdgowd4c" path="res://scripts/player/player_state_machine.gd" id="3_qhqgy"]
 [ext_resource type="Script" uid="uid://cbef72lwf0clx" path="res://scripts/hurt_box.gd" id="3_ur7pv"]
 [ext_resource type="Script" uid="uid://dn6b3i7grc5i2" path="res://scripts/player/state_idle.gd" id="4_qlg0r"]
 [ext_resource type="Script" uid="uid://dgwhi1djunvbp" path="res://scripts/player/state_walk.gd" id="5_qlg0r"]
@@ -36,7 +36,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -660,6 +660,7 @@ damage = 3.0
 [node name="AttackCollision" type="CollisionShape2D" parent="Sprite2D/sword"]
 position = Vector2(8, 0)
 shape = SubResource("CapsuleShape2D_tuyoq")
+disabled = true
 debug_color = Color(0.996319, 0, 0.189017, 0.42)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Sprite2D/sword/AttackCollision"]
@@ -681,6 +682,7 @@ metadata/_custom_type_script = "uid://dn6b3i7grc5i2"
 
 [node name="StateWalk" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("5_qlg0r")
+move_speed = null
 metadata/_custom_type_script = "uid://dgwhi1djunvbp"
 
 [node name="StateAttack" type="Node" parent="PlayerStateMachine"]

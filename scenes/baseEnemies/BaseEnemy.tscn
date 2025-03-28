@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dix7yn7cxx3cj"]
+[gd_scene load_steps=23 format=3 uid="uid://dix7yn7cxx3cj"]
 
 [ext_resource type="Script" uid="uid://dfdyv78ro7mng" path="res://scripts/enemies/base_enemy.gd" id="1_c6idg"]
 [ext_resource type="Script" uid="uid://cqfhny4iq01p3" path="res://scripts/hit_box.gd" id="1_egrxe"]
-[ext_resource type="Script" uid="uid://cb3b3xdgowd4c" path="res://scripts/state_machine.gd" id="3_56vv0"]
+[ext_resource type="Script" uid="uid://eyh4iucg5d70" path="res://scripts/enemies/enemy_state_machine.gd" id="3_56vv0"]
+[ext_resource type="Script" uid="uid://dl8sa5o5qnlmo" path="res://scripts/enemies/enemy_state_idle.gd" id="4_ky5xn"]
+[ext_resource type="Script" uid="uid://cv42lhp3cpyr2" path="res://scripts/enemies/enemy_state_walk.gd" id="5_my7yo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c6idg"]
 radius = 8.0
@@ -14,6 +16,290 @@ radius = 8.0
 radius = 8.0
 height = 16.0
 rings = 8
+
+[sub_resource type="SphereMesh" id="SphereMesh_56vv0"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_pgxss"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_56vv0"]
+radius = 1.0
+height = 8.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pgxss"]
+radius = 1.0
+height = 8.0
+
+[sub_resource type="Animation" id="Animation_pgxss"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.14159]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/RightLimb:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/LeftLimb:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_my7yo"]
+resource_name = "idle_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ky5xn"]
+resource_name = "idle_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_w6ptx"]
+resource_name = "idle_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.71239]
+}
+
+[sub_resource type="Animation" id="Animation_56vv0"]
+resource_name = "idle_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.14159]
+}
+
+[sub_resource type="Animation" id="Animation_raqd2"]
+resource_name = "walk_down"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/RightLimb:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.261799, 0.0, 0.261799]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/LeftLimb:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.261799, 0.0, -0.261799]
+}
+
+[sub_resource type="Animation" id="Animation_7ipr8"]
+resource_name = "walk_left"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/RightLimb:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.261799, 0.0, 0.261799]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/LeftLimb:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.261799, 0.0, -0.261799]
+}
+
+[sub_resource type="Animation" id="Animation_v663h"]
+resource_name = "walk_right"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.71239]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/RightLimb:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.261799, 0.0, 0.261799]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/LeftLimb:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.261799, 0.0, -0.261799]
+}
+
+[sub_resource type="Animation" id="Animation_npc7d"]
+resource_name = "walk_up"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.14159]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/RightLimb:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.261799, 0.0, 0.261799]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/LeftLimb:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.261799, 0.0, -0.261799]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_my7yo"]
+_data = {
+&"RESET": SubResource("Animation_pgxss"),
+&"idle_down": SubResource("Animation_my7yo"),
+&"idle_left": SubResource("Animation_ky5xn"),
+&"idle_right": SubResource("Animation_w6ptx"),
+&"idle_up": SubResource("Animation_56vv0"),
+&"walk_down": SubResource("Animation_raqd2"),
+&"walk_left": SubResource("Animation_7ipr8"),
+&"walk_right": SubResource("Animation_v663h"),
+&"walk_up": SubResource("Animation_npc7d")
+}
 
 [node name="BaseEnemy" type="CharacterBody2D"]
 collision_layer = 4
@@ -35,11 +321,47 @@ self_modulate = Color(0.46929, 0.632264, 0.874553, 1)
 z_index = 1
 shape = SubResource("CircleShape2D_8of78")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+[node name="Body" type="MeshInstance2D" parent="."]
+rotation = 3.14159
 mesh = SubResource("SphereMesh_8of78")
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="LeftEye" type="MeshInstance2D" parent="Body"]
+self_modulate = Color(0, 0, 0, 1)
+z_index = 1
+position = Vector2(3, 5)
+mesh = SubResource("SphereMesh_56vv0")
+
+[node name="RightEye" type="MeshInstance2D" parent="Body"]
+self_modulate = Color(0, 0, 0, 1)
+z_index = 1
+position = Vector2(-3, 5)
+mesh = SubResource("SphereMesh_pgxss")
+
+[node name="LeftLimb" type="MeshInstance2D" parent="Body"]
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(8, 0)
+mesh = SubResource("CapsuleMesh_56vv0")
+
+[node name="RightLimb" type="MeshInstance2D" parent="Body"]
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(-8, 0)
+mesh = SubResource("CapsuleMesh_pgxss")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_my7yo")
+}
+
+[node name="EnemyStateMachine" type="Node" parent="."]
 script = ExtResource("3_56vv0")
-metadata/_custom_type_script = "uid://cb3b3xdgowd4c"
+metadata/_custom_type_script = "uid://eyh4iucg5d70"
+
+[node name="EnemyStateIdle" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("4_ky5xn")
+metadata/_custom_type_script = "uid://dl8sa5o5qnlmo"
+
+[node name="EnemyStateWalk" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("5_my7yo")
+metadata/_custom_type_script = "uid://cv42lhp3cpyr2"
 
 [connection signal="damaged" from="HitBox" to="." method="take_hit"]

@@ -17,7 +17,7 @@ var in_void : bool = false
 @onready var sword_sprite: MeshInstance2D = $Sprite2D/sword/AttackCollision/MeshInstance2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var player_state_machine: StateMachine = $PlayerStateMachine
+@onready var player_state_machine: PlayerStateMachine = $PlayerStateMachine
 
 
 func _ready() -> void:
@@ -94,12 +94,9 @@ func set_hovering_state(is_hovering : bool) -> void:
 
 func entering_void(body : Node2D) -> void:
 	void_counter += int(body.get_collision_layer_value(5))
-	print(void_counter)
 
 func exiting_void(body : Node2D) -> void:
 	void_counter -= int(body.get_collision_layer_value(5))
-	print(void_counter)
 
 func respawn() -> void:
-	print("respawning!")
 	position = respawn_position
