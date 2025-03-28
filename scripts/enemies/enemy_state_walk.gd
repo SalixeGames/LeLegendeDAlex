@@ -17,7 +17,7 @@ func process(_delta : float) -> EnemyState:
 	controller.velocity = controller.direction * move_speed
 	
 	if controller.set_direction():
-		controller.update_anim("walk")
+		controller.update_anim("walk") 
 	
 	return null
 	

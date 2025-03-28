@@ -8,8 +8,8 @@ class_name BaseEnemy extends CharacterBody2D
 @export var health : float = 5.0
 
 var direction : Vector2 = Vector2.ZERO
-var cardinal_direction : Vector2 = Vector2.DOWN
-var cardinal_direction_name : String = "down"
+var cardinal_direction : Vector2 = Vector2.UP
+var cardinal_direction_name : String = "up"
 var dir_change_timer : float = 6
 
 @onready var enemy_state_machine: EnemyStateMachine = $EnemyStateMachine
@@ -22,7 +22,8 @@ func _process(delta: float) -> void:
 	dir_change_timer += delta
 
 func _physics_process(delta: float) -> void:
-	move_and_slide()
+	if move_and_slide():
+		turn_around()
 
 func set_direction() -> bool:
 	if (position - spawn_position).length() > roaming_radius:
@@ -33,14 +34,17 @@ func set_direction() -> bool:
 		dir_change_timer = 0.0
 	direction = direction.normalized()
 	
+	return set_cardinal_direction()
+
+func set_cardinal_direction() -> bool:
 	var new_direction : Vector2 = cardinal_direction
 	
 	if direction == Vector2.ZERO:
 		return false
 		
-	if !direction.y:
+	if abs(direction.y) < abs(direction.x):
 		new_direction = Vector2.LEFT if direction.x < 0 else Vector2.RIGHT
-	elif !direction.x:
+	elif abs(direction.x) < abs(direction.y):
 		new_direction = Vector2.UP if direction.y < 0 else Vector2.DOWN
 	
 	if new_direction == cardinal_direction:
@@ -49,6 +53,10 @@ func set_direction() -> bool:
 	cardinal_direction = new_direction
 	
 	return true
+
+func turn_around() -> void:
+	direction = -position.direction_to(get_slide_collision(0).get_position())
+	direction = direction.normalized()
 
 func take_hit(hit_points : float) -> void:
 	health -= hit_points

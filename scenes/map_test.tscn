@@ -29,5 +29,25 @@ position = Vector2(483, 162)
 spawn_position = Vector2(483, 162)
 
 [node name="BaseEnemy2" parent="." instance=ExtResource("5_3p1co")]
-position = Vector2(413, 106)
+position = Vector2(443, 95)
+spawn_position = Vector2(483, 162)
+
+[node name="BaseEnemy3" parent="." instance=ExtResource("5_3p1co")]
+position = Vector2(605, 140)
+spawn_position = Vector2(483, 162)
+
+[node name="BaseEnemy4" parent="." instance=ExtResource("5_3p1co")]
+position = Vector2(555, 201)
+spawn_position = Vector2(483, 162)
+
+[node name="BaseEnemy5" parent="." instance=ExtResource("5_3p1co")]
+position = Vector2(537, 113)
+spawn_position = Vector2(483, 162)
+
+[node name="BaseEnemy6" parent="." instance=ExtResource("5_3p1co")]
+position = Vector2(449, 234)
+spawn_position = Vector2(483, 162)
+
+[node name="BaseEnemy7" parent="." instance=ExtResource("5_3p1co")]
+position = Vector2(-309, 319)
 spawn_position = Vector2(483, 162)
