@@ -23,7 +23,6 @@ var in_void : bool = false
 func _ready() -> void:
 	player_state_machine.initialize(self)
 	
-
 func _process(delta: float) -> void:
 	direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	direction.y = Input.get_action_raw_strength("move_down") - Input.get_action_strength("move_up")
@@ -38,7 +37,6 @@ func _process(delta: float) -> void:
 		if sword > GameState.SwordState.noob:
 			GameState.update_sword_state(sword - 1)
 		
-
 func  _physics_process(delta: float) -> void:
 	if not hovering and void_counter > 6:
 		respawn()

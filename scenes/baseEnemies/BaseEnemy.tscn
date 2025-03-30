@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://dix7yn7cxx3cj"]
+[gd_scene load_steps=24 format=3 uid="uid://dix7yn7cxx3cj"]
 
 [ext_resource type="Script" uid="uid://dfdyv78ro7mng" path="res://scripts/enemies/base_enemy.gd" id="1_c6idg"]
 [ext_resource type="Script" uid="uid://cqfhny4iq01p3" path="res://scripts/hit_box.gd" id="1_egrxe"]
 [ext_resource type="Script" uid="uid://eyh4iucg5d70" path="res://scripts/enemies/enemy_state_machine.gd" id="3_56vv0"]
 [ext_resource type="Script" uid="uid://dl8sa5o5qnlmo" path="res://scripts/enemies/enemy_state_idle.gd" id="4_ky5xn"]
 [ext_resource type="Script" uid="uid://cv42lhp3cpyr2" path="res://scripts/enemies/enemy_state_walk.gd" id="5_my7yo"]
+[ext_resource type="Script" uid="uid://c67aknim52tch" path="res://scripts/enemies/enemy_state_return_to_base.gd" id="6_my7yo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c6idg"]
 radius = 8.0
@@ -363,5 +364,9 @@ metadata/_custom_type_script = "uid://dl8sa5o5qnlmo"
 [node name="EnemyStateWalk" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("5_my7yo")
 metadata/_custom_type_script = "uid://cv42lhp3cpyr2"
+
+[node name="EnemyStateReturnToBase" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("6_my7yo")
+metadata/_custom_type_script = "uid://c67aknim52tch"
 
 [connection signal="damaged" from="HitBox" to="." method="take_hit"]

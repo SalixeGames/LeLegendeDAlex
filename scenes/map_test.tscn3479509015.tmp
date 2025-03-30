@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dl3f242whq3wi"]
+[gd_scene load_steps=8 format=4 uid="uid://dl3f242whq3wi"]
 
 [ext_resource type="PackedScene" uid="uid://c21np1kf5tqa" path="res://scenes/player/player.tscn" id="1_q1m20"]
 [ext_resource type="PackedScene" uid="uid://8wsshwu7rvk1" path="res://scenes/environments/Wall.tscn" id="2_x5nem"]
@@ -14,14 +14,6 @@ scenes/3/scene = ExtResource("4_g3f5c")
 [sub_resource type="TileSet" id="TileSet_y150f"]
 sources/0 = SubResource("TileSetScenesCollectionSource_o4b1t")
 
-[sub_resource type="SphereMesh" id="SphereMesh_3p1co"]
-radius = 150.0
-height = 300.0
-
-[sub_resource type="SphereMesh" id="SphereMesh_6nkdi"]
-radius = 140.0
-height = 280.0
-
 [node name="map_test" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_q1m20")]
@@ -35,15 +27,3 @@ tile_set = SubResource("TileSet_y150f")
 [node name="BaseEnemy" parent="." instance=ExtResource("5_3p1co")]
 position = Vector2(483, 162)
 spawn_position = Vector2(483, 162)
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-self_modulate = Color(0.583021, 0.623897, 0.83451, 1)
-z_index = -1
-position = Vector2(483, 162)
-mesh = SubResource("SphereMesh_3p1co")
-
-[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
-self_modulate = Color(0.792728, 0.605553, 0.177165, 1)
-z_index = -1
-position = Vector2(483, 162)
-mesh = SubResource("SphereMesh_6nkdi")

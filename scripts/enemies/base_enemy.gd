@@ -26,17 +26,6 @@ func _physics_process(delta: float) -> void:
 		turn_around()
 
 func set_direction() -> bool:
-	if (position - spawn_position).length() > roaming_radius:
-		direction = position.direction_to(spawn_position)
-	elif dir_change_timer >= 5 or velocity == Vector2.ZERO:
-		direction = Vector2i.DOWN if randi() % 2 else Vector2i.RIGHT
-		direction *= -1 if randi() % 2 else 1
-		dir_change_timer = 0.0
-	direction = direction.normalized()
-	
-	return set_cardinal_direction()
-
-func set_cardinal_direction() -> bool:
 	var new_direction : Vector2 = cardinal_direction
 	
 	if direction == Vector2.ZERO:

@@ -5,6 +5,7 @@ class_name EnemyStateWalk extends EnemyState
 
 @onready var enemy_state_idle: EnemyStateIdle = $"../EnemyStateIdle"
 @onready var controller: BaseEnemy = $"../.."
+@onready var enemy_state_return_to_base: EnemyStateReturnToBase = $"../EnemyStateReturnToBase"
 
 
 func enter() -> void:
@@ -14,11 +15,19 @@ func exit() -> void:
 	pass
 	
 func process(_delta : float) -> EnemyState:
+	if (controller.position - controller.spawn_position).length() > controller.roaming_radius:
+		return enemy_state_return_to_base
+	elif controller.dir_change_timer >= 5 or controller.velocity == Vector2.ZERO:
+		controller.direction = Vector2i.DOWN if randi() % 2 else Vector2i.RIGHT
+		controller.direction *= -1 if randi() % 2 else 1
+		controller.dir_change_timer = 0.0
+	controller.direction = controller.direction.normalized()
+	
 	controller.velocity = controller.direction * move_speed
 	
 	if controller.set_direction():
 		controller.update_anim("walk") 
-	
+		
 	return null
 	
 func physics(_delta : float) -> EnemyState:

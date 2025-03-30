@@ -9,9 +9,7 @@ func enter() -> void:
 func exit() -> void:
 	pass
 	
-func process(_delta : float) -> EnemyState:
-	print(controller)
-	print(controller.direction)
+func process(_delta : float) -> EnemyState: 
 	if controller.direction != Vector2.ZERO:
 		return enemy_state_walk
 	controller.velocity = Vector2.ZERO
