@@ -24,8 +24,10 @@ var dir_change_timer : float = 6
 func _ready() -> void:
 	enemy_state_machine.initialize(self)
 	
+func set_fov():
 	vision_angle  = deg_to_rad(vision_angle)
 	var vision_y_coordinate : float = tan(vision_angle / 2) * vision_distance
+	
 	vision_shape.set(
 		"polygon", 
 		PackedVector2Array(
@@ -36,9 +38,12 @@ func _ready() -> void:
 		)
 	)
 	
-	for i in 4:
-		line_2d.set_point_position(i, vision_shape.polygon.get(i % 3))
-	
+	for point_id in 4:
+		line_2d.set_point_position(
+			point_id, 
+			vision_shape.polygon.get(point_id % 3)
+		)
+
 func _process(delta: float) -> void:
 	dir_change_timer += delta
 
