@@ -7,6 +7,12 @@ class_name BaseEnemy extends CharacterBody2D
 @export_category("Stats")
 @export var health : float = 5.0
 
+@export_category("Vision")
+@export var vision_distance : float = 150
+@export var vision_angle : float = 100
+@onready var vision_shape: CollisionPolygon2D = $Body/Vision/VisionShape
+@onready var line_2d: Line2D = $Body/Vision/Line2D
+
 var direction : Vector2 = Vector2.ZERO
 var cardinal_direction : Vector2 = Vector2.UP
 var cardinal_direction_name : String = "up"
@@ -17,7 +23,22 @@ var dir_change_timer : float = 6
 
 func _ready() -> void:
 	enemy_state_machine.initialize(self)
-
+	
+	vision_angle  = deg_to_rad(vision_angle)
+	var vision_y_coordinate : float = tan(vision_angle / 2) * vision_distance
+	vision_shape.set(
+		"polygon", 
+		PackedVector2Array(
+			[
+				Vector2.ZERO, 
+				Vector2(-vision_y_coordinate, -vision_distance), 
+				Vector2(vision_y_coordinate, -vision_distance)]
+		)
+	)
+	
+	for i in 4:
+		line_2d.set_point_position(i, vision_shape.polygon.get(i % 3))
+	
 func _process(delta: float) -> void:
 	dir_change_timer += delta
 
@@ -68,3 +89,7 @@ func get_direction() -> String:
 	elif cardinal_direction == Vector2.RIGHT:
 		cardinal_direction_name = "right"
 	return cardinal_direction_name
+
+
+func _on_vision_body_entered(body: Node2D) -> void:
+	print("Player in view!")
