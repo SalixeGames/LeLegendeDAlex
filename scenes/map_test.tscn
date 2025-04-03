@@ -25,11 +25,7 @@ height = 280.0
 [node name="map_test" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_q1m20")]
-position = Vector2(486, 229)
-respawn_position = Vector2(282, 80)
-
-[node name="CharacterBody2D2" parent="." instance=ExtResource("1_q1m20")]
-position = Vector2(282, 128)
+position = Vector2(290, 125)
 respawn_position = Vector2(282, 80)
 
 [node name="BaseTileMap" type="TileMapLayer" parent="."]

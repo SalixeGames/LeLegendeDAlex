@@ -18,21 +18,12 @@ func enter() -> void:
 func exit() -> void:
 	pass
 	
-func process(_delta : float) -> EnemyState:
-		
+func process(delta : float) -> EnemyState:
 	var distance_to_base : float = controller.position.distance_to(base)
 	if distance_to_base < min_distance - 10:
 		return enemy_state_walk
 	
-	var dir_to_base : Vector2 = controller.position - base
-	var angle_to_base : float = controller.direction.angle_to(dir_to_base)
-	
-	var rot_direction : int = 1
-	if angle_to_base > 0:
-		rot_direction = -1
-		
-	var rotation_angle = rot_direction * rot_angle * _delta
-	controller.direction = controller.direction.rotated(rotation_angle)
+	set_direction(delta)
 	
 	controller.velocity = controller.direction * move_speed
 	
@@ -40,6 +31,17 @@ func process(_delta : float) -> EnemyState:
 		controller.update_anim("walk") 
 
 	return null
+
+func set_direction(delta : float) -> void:
+	var dir_to_base : Vector2 = controller.position - base
+	var angle_to_base : float = controller.direction.angle_to(dir_to_base)
+	
+	var rot_direction : int = 1
+	if angle_to_base > 0:
+		rot_direction = -1
+		
+	var rotation_angle = rot_direction * rot_angle * delta
+	controller.direction = controller.direction.rotated(rotation_angle)
 
 func rotate_vector(vector : Vector2, angle : float) -> Vector2:
 	var new_vector : Vector2 = Vector2.ZERO

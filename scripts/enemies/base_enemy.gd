@@ -48,9 +48,6 @@ func set_fov():
 		)
 
 func _process(delta: float) -> void:
-	print(bodies_in_vision)
-	for body : Player in bodies_in_vision:
-		body.respawn()
 	dir_change_timer += delta
 
 func _physics_process(delta: float) -> void:
