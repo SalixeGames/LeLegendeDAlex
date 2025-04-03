@@ -3,8 +3,8 @@ class_name EnemyStateFollow extends EnemyState
 
 @export var move_speed : float = 50.0
 
-@onready var controller: BaseEnemy = $"../.."
 @onready var enemy_state_return_to_base: EnemyStateReturnToBase = $"../EnemyStateReturnToBase"
+@onready var enemy_state_attack: EnemyStateAttack = $"../EnemyStateAttack"
 
 
 func enter() -> void:
@@ -17,7 +17,10 @@ func process(_delta : float) -> EnemyState:
 	if return_to_base():
 		return enemy_state_return_to_base
 	
-	set_direction()
+	var follow_position : Vector2 = controller.bodies_in_vision[0].position
+	if controller.position.distance_to(follow_position) < 80:
+		return enemy_state_attack
+	set_direction(follow_position)
 	
 	controller.velocity = controller.direction * move_speed * 1.3
 	
@@ -26,8 +29,7 @@ func process(_delta : float) -> EnemyState:
 		
 	return null
 
-func set_direction() -> void:
-	var follow_position = controller.bodies_in_vision[0].position
+func set_direction(follow_position : Vector2) -> void:
 	var dir_to_follow : Vector2 = follow_position - controller.position
 	controller.direction = dir_to_follow.normalized()
 

@@ -5,7 +5,6 @@ class_name EnemyStateReturnToBase extends EnemyState
 @export var rot_angle : float = PI/2
 
 @onready var enemy_state_walk: EnemyStateWalk = $"../EnemyStateWalk"
-@onready var controller: BaseEnemy = $"../.."
 
 var base : Vector2
 var min_distance : float

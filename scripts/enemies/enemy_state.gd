@@ -1,5 +1,7 @@
 class_name EnemyState extends Node
 
+@onready var controller: BaseEnemy = $"../.."
+
 func enter() -> void:
 	pass
 	

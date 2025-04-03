@@ -1,7 +1,6 @@
 class_name EnemyStateIdle extends EnemyState
 
 @onready var enemy_state_walk: EnemyStateWalk = $"../EnemyStateWalk"
-@onready var controller: BaseEnemy = $"../.."
 
 func enter() -> void:
 	controller.update_anim("idle")
