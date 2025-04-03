@@ -18,11 +18,14 @@ var cardinal_direction : Vector2 = Vector2.UP
 var cardinal_direction_name : String = "up"
 var dir_change_timer : float = 6
 
+var bodies_in_vision : Array[CharacterBody2D] = []
+
 @onready var enemy_state_machine: EnemyStateMachine = $EnemyStateMachine
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	enemy_state_machine.initialize(self)
+	set_fov()
 	
 func set_fov():
 	vision_angle  = deg_to_rad(vision_angle)
@@ -45,6 +48,9 @@ func set_fov():
 		)
 
 func _process(delta: float) -> void:
+	print(bodies_in_vision)
+	for body : Player in bodies_in_vision:
+		body.respawn()
 	dir_change_timer += delta
 
 func _physics_process(delta: float) -> void:
@@ -97,4 +103,11 @@ func get_direction() -> String:
 
 
 func _on_vision_body_entered(body: Node2D) -> void:
-	print("Player in view!")
+	if body.is_class("CharacterBody2D"):
+		bodies_in_vision.append(body)
+
+
+func _on_vision_body_exited(body: Node2D) -> void:
+	if body.is_class("CharacterBody2D"):
+		var position : int = bodies_in_vision.find(body)
+		bodies_in_vision.remove_at(position)

@@ -350,6 +350,7 @@ mesh = SubResource("CapsuleMesh_pgxss")
 
 [node name="Vision" type="Area2D" parent="Body"]
 rotation = 3.14159
+collision_layer = 4
 
 [node name="VisionShape" type="CollisionPolygon2D" parent="Body/Vision"]
 polygon = PackedVector2Array(0, 0, -91.9998, -76.0002, 92, -76)
@@ -381,3 +382,4 @@ metadata/_custom_type_script = "uid://c67aknim52tch"
 
 [connection signal="damaged" from="HitBox" to="." method="take_hit"]
 [connection signal="body_entered" from="Body/Vision" to="." method="_on_vision_body_entered"]
+[connection signal="body_exited" from="Body/Vision" to="." method="_on_vision_body_exited"]
