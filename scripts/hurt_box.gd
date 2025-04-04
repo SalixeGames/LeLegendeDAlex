@@ -8,4 +8,4 @@ func _ready() -> void:
 
 func box_entered(box : Area2D) -> void:
 	if box is HitBox:
-		box.take_damage(damage)
+		box.take_damage(damage, self)

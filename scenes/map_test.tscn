@@ -35,6 +35,7 @@ tile_set = SubResource("TileSet_y150f")
 [node name="BaseEnemy" parent="." instance=ExtResource("5_3p1co")]
 position = Vector2(483, 162)
 spawn_position = Vector2(483, 162)
+health = 150.0
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 self_modulate = Color(0.583021, 0.623897, 0.83451, 1)

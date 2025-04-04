@@ -3,6 +3,7 @@ class_name BaseEnemy extends CharacterBody2D
 @export_category("Positioning")
 @export var spawn_position : Vector2 = Vector2(0, 0)
 @export var roaming_radius : float = 150
+@export var movement_speed : float = 50
 
 @export_category("Stats")
 @export var health : float = 5.0
@@ -22,6 +23,8 @@ var bodies_in_vision : Array[CharacterBody2D] = []
 
 @onready var enemy_state_machine: EnemyStateMachine = $EnemyStateMachine
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var enemy_state_hurt: EnemyStateHurt = $EnemyStateMachine/EnemyStateHurt
+
 
 func _ready() -> void:
 	enemy_state_machine.initialize(self)
@@ -76,10 +79,12 @@ func turn_around() -> void:
 	direction = -position.direction_to(get_slide_collision(0).get_position())
 	direction = direction.normalized()
 
-func take_hit(hit_points : float) -> void:
+func take_hit(hit_points : float, box : Area2D) -> void:
 	health -= hit_points
 	if health <= 0:
 		die()
+	enemy_state_machine.change_state(enemy_state_hurt)
+	direction = -position.direction_to(box.global_position).normalized()
 
 func die() -> void:
 	queue_free()

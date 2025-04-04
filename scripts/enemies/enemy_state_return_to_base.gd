@@ -1,7 +1,6 @@
 class_name EnemyStateReturnToBase extends EnemyState
 
 
-@export var move_speed : float = 50.0
 @export var rot_angle : float = PI/2
 
 @onready var enemy_state_walk: EnemyStateWalk = $"../EnemyStateWalk"
@@ -24,7 +23,7 @@ func process(delta : float) -> EnemyState:
 	
 	set_direction(delta)
 	
-	controller.velocity = controller.direction * move_speed
+	controller.velocity = controller.direction * controller.movement_speed
 	
 	if controller.set_direction():
 		controller.update_anim("walk") 

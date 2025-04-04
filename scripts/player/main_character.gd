@@ -100,5 +100,5 @@ func respawn() -> void:
 	position = respawn_position
 
 
-func _on_hit_box_damaged(damage: float) -> void:
+func _on_hit_box_damaged(damage: float, box : Area2D) -> void:
 	respawn()

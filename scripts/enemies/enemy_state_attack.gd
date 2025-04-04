@@ -1,13 +1,12 @@
 class_name EnemyStateAttack extends EnemyState
 
 
-@export var move_speed : float = 50.0
-
 @onready var enemy_state_return_to_base: EnemyStateReturnToBase = $"../EnemyStateReturnToBase"
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var hurt_box: HurtBox = $"../../Body/HurtBox"
 @onready var hurt_collider: CollisionShape2D = $"../../Body/HurtBox/CollisionShape2D"
 
+@export var acceleration : float = 2
 
 var attacking : bool = false
 
@@ -28,7 +27,8 @@ func process(_delta : float) -> EnemyState:
 	if not attacking:
 		return enemy_state_return_to_base
 	
-	controller.velocity = controller.direction * move_speed * 2
+	var speed_factor = controller.movement_speed * acceleration
+	controller.velocity = controller.direction * speed_factor
 	
 	return self
 	

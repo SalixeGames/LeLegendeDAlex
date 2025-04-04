@@ -1,10 +1,10 @@
 class_name EnemyStateFollow extends EnemyState
 
 
-@export var move_speed : float = 50.0
-
 @onready var enemy_state_return_to_base: EnemyStateReturnToBase = $"../EnemyStateReturnToBase"
 @onready var enemy_state_attack: EnemyStateAttack = $"../EnemyStateAttack"
+
+@export var acceleration : float = 1.3
 
 
 func enter() -> void:
@@ -22,7 +22,8 @@ func process(_delta : float) -> EnemyState:
 		return enemy_state_attack
 	set_direction(follow_position)
 	
-	controller.velocity = controller.direction * move_speed * 1.3
+	var speed_factor : float = controller.movement_speed * acceleration
+	controller.velocity = controller.direction * speed_factor
 	
 	if controller.set_direction():
 		controller.update_anim("walk") 
