@@ -17,8 +17,8 @@ func process(_delta : float) -> EnemyState:
 	if return_to_base():
 		return enemy_state_return_to_base
 	
-	var follow_position : Vector2 = controller.bodies_in_vision[0].position
-	if controller.position.distance_to(follow_position) < 80:
+	var follow_position : Vector2 = controller.bodies_in_vision[0].global_position
+	if controller.global_position.distance_to(follow_position) < 80:
 		return enemy_state_attack
 	set_direction(follow_position)
 	
@@ -31,11 +31,11 @@ func process(_delta : float) -> EnemyState:
 	return null
 
 func set_direction(follow_position : Vector2) -> void:
-	var dir_to_follow : Vector2 = follow_position - controller.position
+	var dir_to_follow : Vector2 = follow_position - controller.global_position
 	controller.direction = dir_to_follow.normalized()
 
 func return_to_base() -> bool:
-	var vector_to_base = (controller.position - controller.spawn_position)
+	var vector_to_base = (controller.global_position - controller.spawn_position)
 	var base_too_far = vector_to_base.length() > controller.roaming_radius
 	
 	var player_in_sight = not controller.bodies_in_vision.is_empty()

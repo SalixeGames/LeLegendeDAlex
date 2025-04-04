@@ -17,7 +17,7 @@ func exit() -> void:
 	pass
 	
 func process(delta : float) -> EnemyState:
-	var distance_to_base : float = controller.position.distance_to(base)
+	var distance_to_base : float = controller.global_position.distance_to(base)
 	if distance_to_base < min_distance - 10:
 		return enemy_state_walk
 	
@@ -31,7 +31,7 @@ func process(delta : float) -> EnemyState:
 	return null
 
 func set_direction(delta : float) -> void:
-	var dir_to_base : Vector2 = controller.position - base
+	var dir_to_base : Vector2 = controller.global_position - base
 	var angle_to_base : float = controller.direction.angle_to(dir_to_base)
 	
 	var rot_direction : int = 1

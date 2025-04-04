@@ -30,7 +30,7 @@ func process(_delta : float) -> EnemyState:
 	return null
 
 func return_to_base() -> bool:
-	var vector_to_base = (controller.position - controller.spawn_position)
+	var vector_to_base = (controller.global_position - controller.spawn_position)
 	var base_too_far = vector_to_base.length() > controller.roaming_radius
 	
 	return base_too_far

@@ -76,7 +76,7 @@ func set_direction() -> bool:
 	return true
 
 func turn_around() -> void:
-	direction = -position.direction_to(get_slide_collision(0).get_position())
+	direction = -global_position.direction_to(get_slide_collision(0).get_position())
 	direction = direction.normalized()
 
 func take_hit(hit_points : float, box : Area2D) -> void:
@@ -84,7 +84,7 @@ func take_hit(hit_points : float, box : Area2D) -> void:
 	if health <= 0:
 		die()
 	enemy_state_machine.change_state(enemy_state_hurt)
-	direction = -position.direction_to(box.global_position).normalized()
+	direction = -global_position.direction_to(box.global_position).normalized()
 
 func die() -> void:
 	queue_free()
@@ -111,5 +111,5 @@ func _on_vision_body_entered(body: Node2D) -> void:
 
 func _on_vision_body_exited(body: Node2D) -> void:
 	if body.is_class("CharacterBody2D"):
-		var position : int = bodies_in_vision.find(body)
-		bodies_in_vision.remove_at(position)
+		var body_position : int = bodies_in_vision.find(body)
+		bodies_in_vision.remove_at(body_position)
