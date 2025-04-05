@@ -77,6 +77,8 @@ L'attaque est la capacité à attaquer. Chaque ennemi tué donne de l'expérienc
 | NIV  |               5                |             10             |                                        15                                         |
 | :--: | :----------------------------: | :------------------------: | :-------------------------------------------------------------------------------: |
 | Épée | Ruée vers l'avant en attaquant | L'épée frappe à 360 degrés | La ruée devient une attaque sautée, permetant de franchir un petit espace de vide |
+
+
 Attaque de base
 ![[base_attack.gif]]
 Épée niveau 5
