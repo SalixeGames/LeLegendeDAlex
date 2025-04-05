@@ -77,7 +77,14 @@ L'attaque est la capacité à attaquer. Chaque ennemi tué donne de l'expérienc
 | NIV  |               5                |             10             |                                        15                                         |
 | :--: | :----------------------------: | :------------------------: | :-------------------------------------------------------------------------------: |
 | Épée | Ruée vers l'avant en attaquant | L'épée frappe à 360 degrés | La ruée devient une attaque sautée, permetant de franchir un petit espace de vide |
-
+Attaque de base
+![[base_attack.gif]]
+Épée niveau 5
+![[attack_upg_1.gif]]
+Épée niveau 10
+![[attack_upg_2.gif]]
+Épée niveau 15
+![[attack_upg_3.gif]]
 ##### DEF
 La défense est la capacité à se protéger. Chaque coup bloqué avec le bouclier donne de l'expérience dans le domaine. Chaque niveau augment le nombre de point de vie bloqués de 1.
 
