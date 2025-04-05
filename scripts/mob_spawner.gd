@@ -10,6 +10,8 @@ func _ready() -> void:
 		for mob_i : int in number_max[mob_index]:
 			var mob : BaseEnemy = mobs_to_spawn[mob_index].instantiate()
 			mob.spawn_position = position
-			mob.position.x += 2 * (randf() - 0.5) * mob.roaming_radius
-			mob.position.y += 2 * (randf() - 0.5) * mob.roaming_radius
+			
+			var spawn_angle : float = randf() * 2 * PI
+			mob.position.x += randf() * mob.roaming_radius * cos(spawn_angle)
+			mob.position.y += randf() * mob.roaming_radius * sin(spawn_angle)
 			add_child(mob)
