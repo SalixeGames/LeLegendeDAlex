@@ -35,9 +35,10 @@ tile_set = SubResource("TileSet_y150f")
 
 [node name="MobSpawner" parent="." instance=ExtResource("5_6nkdi")]
 position = Vector2(379, 139)
-mobs_to_spawn = Array[PackedScene]([ExtResource("5_3p1co")])
-number_min = Array[int]([2])
-number_max = Array[int]([3])
+mobs_to_spawn = ExtResource("5_3p1co")
+number_min = 1
+number_max = 3
+time_between_spawn = 5.0
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="MobSpawner"]
 self_modulate = Color(0.583021, 0.623897, 0.83451, 1)

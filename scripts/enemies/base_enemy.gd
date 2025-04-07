@@ -87,6 +87,7 @@ func take_hit(hit_points : float, box : Area2D) -> void:
 	direction = -global_position.direction_to(box.global_position).normalized()
 
 func die() -> void:
+	emit_signal("on_death")
 	queue_free()
 	
 func update_anim(state) -> void:
@@ -113,3 +114,6 @@ func _on_vision_body_exited(body: Node2D) -> void:
 	if body.is_class("CharacterBody2D"):
 		var body_position : int = bodies_in_vision.find(body)
 		bodies_in_vision.remove_at(body_position)
+
+
+signal on_death()

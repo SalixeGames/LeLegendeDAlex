@@ -99,6 +99,5 @@ func exiting_void(body : Node2D) -> void:
 func respawn() -> void:
 	position = respawn_position
 
-
 func _on_hit_box_damaged(damage: float, box : Area2D) -> void:
 	respawn()
