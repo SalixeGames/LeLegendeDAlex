@@ -1,11 +1,10 @@
 class_name BaseEnemy extends CharacterBody2D
 
-@export_category("Positioning")
-@export var spawn_position : Vector2 = Vector2(0, 0)
-@export var roaming_radius : float = 150
-@export var movement_speed : float = 50
+var spawn_position : Vector2 = Vector2(0, 0)
+var roaming_radius : float = 150
 
 @export_category("Stats")
+@export var movement_speed : float = 50
 @export var health : float = 5.0
 
 @export_category("Vision")

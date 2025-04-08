@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dl3f242whq3wi"]
+[gd_scene load_steps=9 format=4 uid="uid://dl3f242whq3wi"]
 
 [ext_resource type="PackedScene" uid="uid://c21np1kf5tqa" path="res://scenes/player/player.tscn" id="1_q1m20"]
 [ext_resource type="PackedScene" uid="uid://8wsshwu7rvk1" path="res://scenes/environments/Wall.tscn" id="2_x5nem"]
@@ -15,18 +15,10 @@ scenes/3/scene = ExtResource("4_g3f5c")
 [sub_resource type="TileSet" id="TileSet_y150f"]
 sources/0 = SubResource("TileSetScenesCollectionSource_o4b1t")
 
-[sub_resource type="SphereMesh" id="SphereMesh_3p1co"]
-radius = 150.0
-height = 300.0
-
-[sub_resource type="SphereMesh" id="SphereMesh_6nkdi"]
-radius = 140.0
-height = 280.0
-
 [node name="map_test" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_q1m20")]
-position = Vector2(157, 49)
+position = Vector2(281, -80)
 respawn_position = Vector2(282, 80)
 
 [node name="BaseTileMap" type="TileMapLayer" parent="."]
@@ -34,18 +26,8 @@ tile_map_data = PackedByteArray("AAAEAAAAAAAAAAAAAQAFAAAAAAAAAAAAAQAGAAAAAAAAAAA
 tile_set = SubResource("TileSet_y150f")
 
 [node name="MobSpawner" parent="." instance=ExtResource("5_6nkdi")]
-position = Vector2(379, 139)
+position = Vector2(453, 17)
 mobs_to_spawn = ExtResource("5_3p1co")
 number_min = 1
 number_max = 3
 time_between_spawn = 5.0
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="MobSpawner"]
-self_modulate = Color(0.583021, 0.623897, 0.83451, 1)
-z_index = -1
-mesh = SubResource("SphereMesh_3p1co")
-
-[node name="MeshInstance2D2" type="MeshInstance2D" parent="MobSpawner"]
-self_modulate = Color(0.792728, 0.605553, 0.177165, 1)
-z_index = -1
-mesh = SubResource("SphereMesh_6nkdi")
