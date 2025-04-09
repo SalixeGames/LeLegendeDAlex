@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://dl3f242whq3wi"]
+[gd_scene load_steps=10 format=4 uid="uid://dl3f242whq3wi"]
 
 [ext_resource type="PackedScene" uid="uid://c21np1kf5tqa" path="res://scenes/player/player.tscn" id="1_q1m20"]
 [ext_resource type="PackedScene" uid="uid://8wsshwu7rvk1" path="res://scenes/environments/Wall.tscn" id="2_x5nem"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://k1wf2jiscfi2" path="res://scenes/environments/Floor.tscn" id="4_g3f5c"]
 [ext_resource type="PackedScene" uid="uid://dix7yn7cxx3cj" path="res://scenes/baseEnemies/BaseEnemy.tscn" id="5_3p1co"]
 [ext_resource type="PackedScene" uid="uid://cegwnh6mybr7u" path="res://scenes/environments/MobSpawner.tscn" id="5_6nkdi"]
+[ext_resource type="AudioStream" uid="uid://cruymeihglbym" path="res://sounds/music/overworld.wav" id="7_h1wmk"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_o4b1t"]
 scenes/1/scene = ExtResource("2_x5nem")
@@ -31,3 +32,7 @@ mobs_to_spawn = ExtResource("5_3p1co")
 number_min = 1
 number_max = 3
 time_between_spawn = 5.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_h1wmk")
+autoplay = true
