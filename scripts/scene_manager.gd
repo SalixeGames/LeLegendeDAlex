@@ -1,17 +1,22 @@
 class_name SceneManager extends Node2D
 
 @export var player : Player
-@export var teleporters : Dictionary[GameState.Region, SceneSwitcher]
+var teleporters : Array[SceneSwitcher]
 
 func _ready() -> void:
 	_load_scene(GameState.region_coming_from)
 
 func _load_scene(from : GameState.Region) -> void:
-	for teleporter : SceneSwitcher in teleporters.values():
-		teleporter.deactivate()
-	if from in teleporters.keys():
-		player.respawn_position = teleporters[from].position
-		teleporters[from].players_inside.append(player)
+	# Yuck! I need to make a better system. (':& ¦:')
+	# For now it is what it is, I don't want to do this manually lol
+	# - Salixe
+	for child in get_children():
+		if child is SceneSwitcher:
+			child.deactivate()
+			teleporters.append(child)
+			if child.destination == from:
+				player.respawn_position = child.position
+				child.players_inside.append(player)
 	player.respawn()
-	for teleporter : SceneSwitcher in teleporters.values():
+	for teleporter : SceneSwitcher in teleporters:
 		teleporter.activate()

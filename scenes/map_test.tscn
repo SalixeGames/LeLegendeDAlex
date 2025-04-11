@@ -18,12 +18,9 @@ scenes/3/scene = ExtResource("4_g3f5c")
 [sub_resource type="TileSet" id="TileSet_y150f"]
 sources/0 = SubResource("TileSetScenesCollectionSource_t5yh1")
 
-[node name="map_test" type="Node2D" node_paths=PackedStringArray("player", "teleporters")]
+[node name="map_test" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_b3oat")
 player = NodePath("CharacterBody2D")
-teleporters = {
-0: NodePath("OverworldToTown1")
-}
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_q1m20")]
 position = Vector2(-106, -286)

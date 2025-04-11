@@ -10,6 +10,7 @@ enum Region {
 	town1, town2, town3, town4, overworld, donjon1, donjon2, donjon3, donjon4
 }
 
+# Need to declare each region here so the PackedScenes are preloaded
 var regions_scenes : Dictionary[Region, PackedScene] = {
 	Region.town1 : preload("res://scenes/regions/town_1.tscn"),
 	Region.town2 : preload("res://scenes/regions/town_2.tscn"),

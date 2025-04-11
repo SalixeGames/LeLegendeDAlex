@@ -15,15 +15,9 @@ scenes/3/scene = ExtResource("4_wqdtf")
 [sub_resource type="TileSet" id="TileSet_sao45"]
 sources/0 = SubResource("TileSetScenesCollectionSource_cm5wp")
 
-[node name="Overworld" type="Node2D" node_paths=PackedStringArray("player", "teleporters")]
+[node name="Overworld" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_sqpyr")
 player = NodePath("CharacterBody2D")
-teleporters = {
-0: NodePath("Town1"),
-1: NodePath("Town2"),
-2: NodePath("Town3"),
-3: NodePath("Town4")
-}
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_0imba")]
 position = Vector2(215, -178)
