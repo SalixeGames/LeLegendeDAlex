@@ -17,6 +17,7 @@ func _load_scene(from : GameState.Region) -> void:
 			if child.destination == from:
 				player.respawn_position = child.position
 				child.players_inside.append(player)
+				player.home_base = child
 	player.respawn()
 	for teleporter : SceneSwitcher in teleporters:
 		teleporter.activate()

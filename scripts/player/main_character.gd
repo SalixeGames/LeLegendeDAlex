@@ -8,6 +8,7 @@ var sword = -1
 var hovering : bool = false
 var void_counter : int = 0
 var in_void : bool = false
+var home_base : SceneSwitcher = null
 
 @export_category("Positioning")
 @export var respawn_position : Vector2 = Vector2(0, 0)
@@ -97,7 +98,12 @@ func exiting_void(body : Node2D) -> void:
 	void_counter -= int(body.get_collision_layer_value(5))
 
 func respawn() -> void:
+	if home_base:
+		home_base.deactivate()
+		home_base.players_inside.append(self)
 	position = respawn_position
+	if home_base:
+		home_base.activate()
 
 func _on_hit_box_damaged(damage: float, box : Area2D) -> void:
 	respawn()

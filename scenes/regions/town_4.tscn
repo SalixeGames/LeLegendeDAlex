@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c170tr4ha0t3t" path="res://scenes/environments/Void.tscn" id="3_7tipq"]
 [ext_resource type="PackedScene" uid="uid://k1wf2jiscfi2" path="res://scenes/environments/Floor.tscn" id="4_majle"]
 [ext_resource type="PackedScene" uid="uid://c21np1kf5tqa" path="res://scenes/player/player.tscn" id="5_fbag8"]
-[ext_resource type="PackedScene" uid="uid://b4dcgox5dm8iv" path="res://scenes/SceneSwitcher.tscn" id="6_lth0p"]
+[ext_resource type="PackedScene" uid="uid://b4dcgox5dm8iv" path="res://scenes/environments/SceneSwitcher.tscn" id="6_lth0p"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_gekol"]
 scenes/1/scene = ExtResource("2_lcjtj")
@@ -29,3 +29,7 @@ position = Vector2(243, -94)
 [node name="Town1ToOverworld" parent="." instance=ExtResource("6_lth0p")]
 position = Vector2(40, 136)
 destination = 4
+
+[node name="Donjon4" parent="." instance=ExtResource("6_lth0p")]
+position = Vector2(390, 134)
+destination = 8
