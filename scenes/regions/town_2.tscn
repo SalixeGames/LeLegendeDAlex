@@ -33,3 +33,7 @@ destination = 4
 [node name="Donjon2" parent="." instance=ExtResource("6_tyn55")]
 position = Vector2(55, 100)
 destination = 6
+
+[node name="SceneSwitcher" parent="." instance=ExtResource("6_tyn55")]
+position = Vector2(276, 96)
+destination = 9

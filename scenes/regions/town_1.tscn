@@ -30,6 +30,10 @@ position = Vector2(243, -94)
 position = Vector2(40, 136)
 destination = 4
 
-[node name="SceneSwitcher" parent="." instance=ExtResource("6_wegld")]
-position = Vector2(366, 98)
+[node name="Donjon" parent="." instance=ExtResource("6_wegld")]
+position = Vector2(366, 134)
 destination = 5
+
+[node name="House" parent="." instance=ExtResource("6_wegld")]
+position = Vector2(366, 56)
+destination = 9

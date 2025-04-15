@@ -7,6 +7,10 @@ class_name SceneSwitcher extends Node2D
 
 var can_detect : bool = true
 
+func _ready() -> void:
+	if players_inside:
+		deactivate()
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		players_inside.append(body)

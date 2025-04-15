@@ -9,7 +9,8 @@ enum SwordState {
 enum Region {
 	town1, town2, town3, town4, 
 	overworld, 
-	donjon1, donjon2, donjon3, donjon4
+	donjon1, donjon2, donjon3, donjon4,
+	house
 }
 
 # Need to declare each region here so the PackedScenes are preloaded
@@ -22,7 +23,8 @@ var regions_scenes : Dictionary[Region, PackedScene] = {
 	Region.donjon1 : preload("res://scenes/regions/donjon1.tscn"),
 	Region.donjon2 : preload("res://scenes/regions/donjon2.tscn"),
 	Region.donjon3 : preload("res://scenes/regions/donjon3.tscn"),
-	Region.donjon4 : preload("res://scenes/regions/donjon4.tscn")
+	Region.donjon4 : preload("res://scenes/regions/donjon4.tscn"),
+	Region.house : preload("res://scenes/regions/base_house.tscn")
 }
 
 var sword_state : SwordState = SwordState.noob
