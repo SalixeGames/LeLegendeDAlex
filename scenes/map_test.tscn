@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dl3f242whq3wi"]
 
-[ext_resource type="Script" uid="uid://boadwe6lpahag" path="res://scripts/scene_manager.gd" id="1_b3oat"]
+[ext_resource type="Script" uid="uid://boadwe6lpahag" path="res://scripts/regions/scene_manager.gd" id="1_b3oat"]
 [ext_resource type="PackedScene" uid="uid://c21np1kf5tqa" path="res://scenes/player/player.tscn" id="1_q1m20"]
 [ext_resource type="PackedScene" uid="uid://dtn7akys2pd8g" path="res://scenes/environments/base_tile_map.tscn" id="3_h1wmk"]
 [ext_resource type="PackedScene" uid="uid://dix7yn7cxx3cj" path="res://scenes/baseEnemies/BaseEnemy.tscn" id="5_3p1co"]

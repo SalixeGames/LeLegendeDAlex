@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cegwnh6mybr7u"]
 
-[ext_resource type="Script" uid="uid://crx41efcx620j" path="res://scripts/mob_spawner.gd" id="1_13ntj"]
+[ext_resource type="Script" uid="uid://crx41efcx620j" path="res://scripts/enemies/mob_spawner.gd" id="1_13ntj"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_13ntj"]
 radius = 10.0
