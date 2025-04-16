@@ -6,7 +6,7 @@
 size = Vector2(16, 16)
 
 [sub_resource type="QuadMesh" id="QuadMesh_5s4s7"]
-size = Vector2(16, 16)
+size = Vector2(32, 32)
 
 [node name="SceneSwitcher" type="Node2D"]
 script = ExtResource("1_mu1tv")

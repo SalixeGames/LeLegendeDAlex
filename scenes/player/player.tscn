@@ -11,7 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://ch1jrodwfwexi" path="res://sounds/grunt_1.wav" id="8_ur7pv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_63peu"]
-radius = 16.0
+radius = 15.5
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qek5x"]
 radius = 8.0

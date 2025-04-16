@@ -13,13 +13,13 @@ script = ExtResource("1_b3oat")
 player = NodePath("CharacterBody2D")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_q1m20")]
-position = Vector2(-106, -286)
+position = Vector2(-104, -285)
 respawn_position = Vector2(282, 80)
 
 [node name="BaseTileMap" parent="." instance=ExtResource("3_h1wmk")]
 
 [node name="MobSpawner" parent="." instance=ExtResource("5_6nkdi")]
-position = Vector2(453, 17)
+position = Vector2(873, -122)
 mobs_to_spawn = ExtResource("5_3p1co")
 number_min = 1
 number_max = 3

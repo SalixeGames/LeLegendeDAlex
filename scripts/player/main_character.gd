@@ -43,7 +43,7 @@ func _process(_delta: float) -> void:
 			GameState.update_sword_state(sword - 1)
 		
 func  _physics_process(_delta: float) -> void:
-	if not hovering and void_counter > 6:
+	if not hovering and void_counter:
 		respawn()
 	move_and_slide()
 	
@@ -97,11 +97,11 @@ func set_hovering_state(is_hovering : bool) -> void:
 
 func entering_void(body : Node2D) -> void:
 	if not void_counter:
-		void_entry = position
-	void_counter += int(body.get_collision_layer_value(5))
+		void_entry = position - (16 * direction)
+	void_counter += 1
 
 func exiting_void(body : Node2D) -> void:
-	void_counter -= int(body.get_collision_layer_value(5))
+	void_counter -= 1
 	if not void_counter:
 		void_entry = respawn_position
 

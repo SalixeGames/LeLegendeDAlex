@@ -13,6 +13,7 @@ scenes/2/scene = ExtResource("3_gpc5v")
 scenes/3/scene = ExtResource("4_wegld")
 
 [sub_resource type="TileSet" id="TileSet_fw2ss"]
+tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetScenesCollectionSource_gekol")
 
 [node name="Town1" type="Node2D" node_paths=PackedStringArray("player")]
@@ -24,7 +25,7 @@ tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAQD//wEAAAAAAAAAAQD//wIAAAAAAAA
 tile_set = SubResource("TileSet_fw2ss")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_gpc5v")]
-position = Vector2(243, -94)
+position = Vector2(239, -81)
 
 [node name="Town1ToOverworld" parent="." instance=ExtResource("6_wegld")]
 position = Vector2(40, 136)
