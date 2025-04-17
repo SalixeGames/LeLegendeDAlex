@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dfmjbtvaex3el" path="res://scripts/regions/scene_switcher.gd" id="1_mu1tv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ihc16"]
-size = Vector2(16, 16)
+size = Vector2(32, 32)
 
 [sub_resource type="QuadMesh" id="QuadMesh_5s4s7"]
 size = Vector2(32, 32)
@@ -18,6 +18,7 @@ collision_layer = 32
 shape = SubResource("RectangleShape2D_ihc16")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Area2D"]
+visible = false
 self_modulate = Color(0.491325, 0.000170768, 0.491322, 1)
 mesh = SubResource("QuadMesh_5s4s7")
 

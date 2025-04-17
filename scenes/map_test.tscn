@@ -13,10 +13,11 @@ script = ExtResource("1_b3oat")
 player = NodePath("CharacterBody2D")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_q1m20")]
-position = Vector2(-104, -285)
+position = Vector2(514, 114)
 respawn_position = Vector2(282, 80)
 
 [node name="BaseTileMap" parent="." instance=ExtResource("3_h1wmk")]
+position = Vector2(0, 0)
 
 [node name="MobSpawner" parent="." instance=ExtResource("5_6nkdi")]
 position = Vector2(873, -122)
@@ -31,5 +32,5 @@ volume_db = -25.0
 autoplay = true
 
 [node name="OverworldToTown1" parent="." node_paths=PackedStringArray("players_inside") instance=ExtResource("9_t5yh1")]
-position = Vector2(-110, -288)
+position = Vector2(508, 111)
 players_inside = [NodePath("../CharacterBody2D")]
