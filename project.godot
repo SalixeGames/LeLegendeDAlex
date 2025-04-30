@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="LeLegendeDAlex"
-run/main_scene="uid://dl3f242whq3wi"
+run/main_scene="uid://d2k2dcl62m434"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,8 +21,8 @@ GameState="*res://scripts/game_state.gd"
 
 [display]
 
-window/size/viewport_width=480
-window/size/viewport_height=270
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/window_width_override=1080
 window/size/window_height_override=720
 window/stretch/mode="viewport"
