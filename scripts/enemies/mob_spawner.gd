@@ -27,7 +27,7 @@ func start_spawn_mobs() -> void:
 	spawning = true
 
 func spawn_mob() -> void:
-	if spawning_timer >= time_between_spawn:
+	if spawning_timer >= time_between_spawn and mobs_to_spawn:
 		var mob : BaseEnemy = mobs_to_spawn.instantiate()
 		mob.spawn_position = position
 		mob.roaming_radius = roaming_radius
