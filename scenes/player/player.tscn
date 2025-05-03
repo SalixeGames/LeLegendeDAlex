@@ -11,7 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://ch1jrodwfwexi" path="res://sounds/grunt_1.wav" id="8_ur7pv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_63peu"]
-radius = 16.0
+radius = 15.5
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qek5x"]
 radius = 8.0
@@ -693,7 +693,7 @@ metadata/_custom_type_script = "uid://dn6b3i7grc5i2"
 
 [node name="StateWalk" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("5_qlg0r")
-move_speed = null
+move_speed = 500.0
 metadata/_custom_type_script = "uid://dgwhi1djunvbp"
 
 [node name="StateAttack" type="Node" parent="PlayerStateMachine"]
@@ -708,7 +708,9 @@ metadata/_custom_type_script = "uid://7kb5k05a1i4a"
 max_polyphony = 4
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(2, 2)
+process_callback = 0
+limit_smoothed = true
 
 [connection signal="body_entered" from="Area2D" to="." method="entering_void"]
 [connection signal="body_exited" from="Area2D" to="." method="exiting_void"]

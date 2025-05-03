@@ -52,7 +52,7 @@ func set_fov():
 func _process(delta: float) -> void:
 	dir_change_timer += delta
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if move_and_slide():
 		turn_around()
 

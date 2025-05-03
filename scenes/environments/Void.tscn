@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://c170tr4ha0t3t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p05y8"]
-size = Vector2(16, 16)
+size = Vector2(32, 32)
 
 [sub_resource type="BoxMesh" id="BoxMesh_jolkp"]
-size = Vector3(16, 16, 1)
+size = Vector3(32, 32, 1)
 
 [node name="Void" type="StaticBody2D"]
 collision_layer = 16
