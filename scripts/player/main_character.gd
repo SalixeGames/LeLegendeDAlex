@@ -5,7 +5,16 @@ var direction : Vector2 = Vector2.ZERO
 var cardinal_direction : Vector2 = Vector2.DOWN
 var cardinal_direction_name : String = "right"
 var sword = -1
+var home_base : SceneSwitcher = null
+
+# Void things
 var hovering : bool = false
+var void_counter : int = 0
+var in_void : bool = false
+var void_entry : Vector2
+
+@export_category("Positioning")
+@export var respawn_position : Vector2 = Vector2(0, 0)
 
 @export_category("Sword")
 @export var sword_colors: Array[Color] = [Color.RED, Color.GREEN, Color.BLUE, Color.GOLD]
@@ -17,9 +26,9 @@ var hovering : bool = false
 
 func _ready() -> void:
 	player_state_machine.initialize(self)
+	void_entry = respawn_position
 	
-
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	direction.y = Input.get_action_raw_strength("move_down") - Input.get_action_strength("move_up")
 	direction = direction.normalized()
@@ -33,8 +42,9 @@ func _process(delta: float) -> void:
 		if sword > GameState.SwordState.noob:
 			GameState.update_sword_state(sword - 1)
 		
-
-func  _physics_process(delta: float) -> void:
+func  _physics_process(_delta: float) -> void:
+	if not hovering and void_counter:
+		respawn()
 	move_and_slide()
 	
 func set_direction() -> bool:
@@ -73,4 +83,40 @@ func update_sword() -> void:
 	if sword != GameState.sword_state:
 		sword = GameState.sword_state
 		sword_sprite.modulate = sword_colors[sword]
+
+func set_hovering_state(is_hovering : bool) -> void:
+	if hovering == is_hovering:
+		return
+	
+	if is_hovering:
+		hovering = true
+		set_collision_mask_value(5, false)
+	else:
+		hovering = false
+		set_collision_mask_value(5, true)
+
+func entering_void(body : Node2D) -> void:
+	if not void_counter:
+		void_entry = position - (16 * direction)
+	void_counter += 1
+
+func exiting_void(body : Node2D) -> void:
+	void_counter -= 1
+	if not void_counter:
+		void_entry = respawn_position
+
+func respawn() -> void:
+	if home_base:
+		home_base.deactivate()
+		home_base.players_inside.append(self)
 		
+	if void_counter:
+		position = void_entry
+	else:
+		position = respawn_position
+		
+	if home_base:
+		home_base.activate()
+
+func _on_hit_box_damaged(damage: float, box : Area2D) -> void:
+	respawn()
