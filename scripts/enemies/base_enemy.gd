@@ -116,3 +116,7 @@ func _on_vision_body_exited(body: Node2D) -> void:
 
 
 signal on_death()
+
+
+func _on_hit_box_body_entered(body: Node2D) -> void:
+	turn_around()

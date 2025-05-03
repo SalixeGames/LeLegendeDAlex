@@ -92,6 +92,7 @@ sword-={
 2d_physics/layer_4="wall"
 2d_physics/layer_5="void"
 2d_physics/layer_6="environnement"
+2d_physics/layer_7="shield"
 
 [rendering]
 
