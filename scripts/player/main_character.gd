@@ -6,6 +6,7 @@ var cardinal_direction : Vector2 = Vector2.DOWN
 var cardinal_direction_name : String = "right"
 var sword = -1
 var home_base : SceneSwitcher = null
+var shielded : bool = false
 
 # Void things
 var hovering : bool = false
@@ -50,9 +51,11 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("shield"):
 		shield.visible = true
 		shield_collision.disabled = false
+		shielded = true
 	if Input.is_action_just_released("shield"):
 		shield.visible = false
 		shield_collision.disabled = true
+		shielded = false
 		
 func  _physics_process(_delta: float) -> void:
 	if not hovering and void_counter:
@@ -81,14 +84,15 @@ func update_anim(state) -> void:
 	animation_player.play(state + "_" + get_direction())
 
 func get_direction() -> String:
-	if cardinal_direction == Vector2.DOWN:
-		cardinal_direction_name = "down"
-	elif cardinal_direction == Vector2.UP:
-		cardinal_direction_name = "up"
-	elif cardinal_direction == Vector2.LEFT:
-		cardinal_direction_name = "left"
-	elif cardinal_direction == Vector2.RIGHT:
-		cardinal_direction_name = "right"
+	if not shielded:
+		if cardinal_direction == Vector2.DOWN:
+			cardinal_direction_name = "down"
+		elif cardinal_direction == Vector2.UP:
+			cardinal_direction_name = "up"
+		elif cardinal_direction == Vector2.LEFT:
+			cardinal_direction_name = "left"
+		elif cardinal_direction == Vector2.RIGHT:
+			cardinal_direction_name = "right"
 	return cardinal_direction_name
 
 func update_sword() -> void:
