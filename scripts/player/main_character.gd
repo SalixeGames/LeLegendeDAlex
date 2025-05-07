@@ -6,6 +6,7 @@ var cardinal_direction : Vector2 = Vector2.DOWN
 var cardinal_direction_name : String = "right"
 var sword = -1
 var home_base : SceneSwitcher = null
+var shielded : bool = false
 
 # Void things
 var hovering : bool = false
@@ -22,11 +23,16 @@ var void_entry : Vector2
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var player_state_machine: PlayerStateMachine = $PlayerStateMachine
+@onready var shield: StaticBody2D = $Sprite2D/Shield
+@onready var shield_collision: CollisionShape2D = $Sprite2D/Shield/CollisionShape2D
 
 
 func _ready() -> void:
 	player_state_machine.initialize(self)
 	void_entry = respawn_position
+	
+	shield.visible = false
+	shield_collision.disabled = true
 	
 func _process(_delta: float) -> void:
 	direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
@@ -41,6 +47,15 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("sword-"):
 		if sword > GameState.SwordState.noob:
 			GameState.update_sword_state(sword - 1)
+	
+	if Input.is_action_just_pressed("shield"):
+		shield.visible = true
+		shield_collision.disabled = false
+		shielded = true
+	if Input.is_action_just_released("shield"):
+		shield.visible = false
+		shield_collision.disabled = true
+		shielded = false
 		
 func  _physics_process(_delta: float) -> void:
 	if not hovering and void_counter:
@@ -69,14 +84,15 @@ func update_anim(state) -> void:
 	animation_player.play(state + "_" + get_direction())
 
 func get_direction() -> String:
-	if cardinal_direction == Vector2.DOWN:
-		cardinal_direction_name = "down"
-	elif cardinal_direction == Vector2.UP:
-		cardinal_direction_name = "up"
-	elif cardinal_direction == Vector2.LEFT:
-		cardinal_direction_name = "left"
-	elif cardinal_direction == Vector2.RIGHT:
-		cardinal_direction_name = "right"
+	if not shielded:
+		if cardinal_direction == Vector2.DOWN:
+			cardinal_direction_name = "down"
+		elif cardinal_direction == Vector2.UP:
+			cardinal_direction_name = "up"
+		elif cardinal_direction == Vector2.LEFT:
+			cardinal_direction_name = "left"
+		elif cardinal_direction == Vector2.RIGHT:
+			cardinal_direction_name = "right"
 	return cardinal_direction_name
 
 func update_sword() -> void:
